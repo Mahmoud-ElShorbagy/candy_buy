@@ -12,47 +12,47 @@ class OtpView extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        children: const [
           TextFieldOTP(
             first: true,
             last: false,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
           TextFieldOTP(
             first: false,
             last: false,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
           TextFieldOTP(
             first: false,
             last: false,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
           TextFieldOTP(
             first: false,
             last: false,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
           TextFieldOTP(
             first: false,
             last: false,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
           TextFieldOTP(
             first: false,
             last: true,
           ),
-          const SizedBox(
+          SizedBox(
             width: 8,
           ),
         ],
