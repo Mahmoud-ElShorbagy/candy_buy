@@ -73,7 +73,7 @@ class RegisterPasswordView extends StatelessWidget {
                       width: double.infinity,
                       margin: const EdgeInsets.only(top: 43, bottom: 16),
                       child: state is RegisterLoading
-                          ? Center(
+                          ? const Center(
                               child: CircularProgressIndicator(
                                   color: AppColors.textPrimaryColor),
                             )

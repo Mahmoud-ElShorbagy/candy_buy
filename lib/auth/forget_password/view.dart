@@ -87,7 +87,7 @@ class ForgetPasswordView extends StatelessWidget {
                                 RouteNames.login,
                               );
                             },
-                            child: CustomText(
+                            child: const CustomText(
                               fontSize: 14,
                               text: "Remember Password? Log In",
                               color: AppColors.textPrimaryColor,
@@ -99,7 +99,7 @@ class ForgetPasswordView extends StatelessWidget {
                               margin:
                                   const EdgeInsets.only(top: 35, bottom: 16),
                               child: state is ForgetpasswordLoading
-                                  ? Center(
+                                  ? const Center(
                                       child: CircularProgressIndicator(
                                       color: AppColors.textPrimaryColor,
                                     ))

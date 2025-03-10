@@ -84,7 +84,7 @@ class LoginView extends StatelessWidget {
                               Navigator.pushNamed(
                                   context, RouteNames.forgetpassword);
                             },
-                            child: CustomText(
+                            child: const CustomText(
                               fontSize: 14,
                               text: "Forgot Password?",
                               color: AppColors.textPrimaryColor,
@@ -96,7 +96,7 @@ class LoginView extends StatelessWidget {
                             width: double.infinity,
                             margin: const EdgeInsets.only(top: 24, bottom: 16),
                             child: state is LoginLoading
-                                ? Center(
+                                ? const Center(
                                     child: CircularProgressIndicator(
                                         color: AppColors.textPrimaryColor))
                                 : CustomButton(
