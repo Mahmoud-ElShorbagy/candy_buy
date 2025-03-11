@@ -49,7 +49,7 @@ class CandyFairPageView extends StatelessWidget {
                       width: product.width,
                       height: product.height),
                   ProductDetails(
-                      margin: EdgeInsets.only(right: 10),
+                      margin: EdgeInsets.zero,
                       title: product.name,
                       price: product.price),
                   BlocListener<ProductCubit, ProductState>(
