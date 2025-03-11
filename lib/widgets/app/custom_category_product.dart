@@ -54,7 +54,7 @@ class CustomCategoryProduct extends StatelessWidget {
           margin: const EdgeInsets.only(left: 16, top: 24),
           child: const CustomText(
             text: "All Items",
-            fontWeight: FontWeight.w400,
+            fontWeight: FontWeight.w600,
             color: AppColors.textBoldColor,
             fontSize: 16,
             fontFamily: "Fredoka",
