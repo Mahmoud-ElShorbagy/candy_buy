@@ -9,13 +9,16 @@ class TitleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        CustomText(
-          fontSize: 24,
-          text: 'Hello Shambhavi,',
-          color: AppColors.textBoldColor,
-          fontWeight: FontWeight.w400,
-          fontFamily: "Fredoka",
+      children: [
+        Container(
+          margin: EdgeInsets.only(right: 35),
+          child: CustomText(
+            fontSize: 24,
+            text: 'Hello Shambhavi,',
+            color: AppColors.textBoldColor,
+            fontWeight: FontWeight.w600,
+            fontFamily: "Fredoka",
+          ),
         ),
         SizedBox(
           height: 4,
