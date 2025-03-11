@@ -10,8 +10,8 @@ final List<String> title = [
   "Hot Chocolate"
 ];
 final List<String> content = [
-  "Sweet suchis, best candies,",
-  "Classis, broken hear and",
+  "Sweet suchis,",
+  "Classis, broken hear",
   "more tasty donuts",
   "Cupcakes, buns, cherries,",
   "and decorative cakes",
@@ -45,13 +45,13 @@ final List<String> icons = [
 final List<int> width = [83, 89, 74, 91, 67, 61, 91];
 final List<int> height = [105, 105, 116, 116, 112, 118, 120];
 final List<double> marginLeft = [
-  0,
-  15,
   50,
-  10,
+  30,
+  50,
+  0,
   50,
   55,
-  20,
+  10,
 ];
 final List<CategoreytDTO> categorey = [
   ...List.generate(

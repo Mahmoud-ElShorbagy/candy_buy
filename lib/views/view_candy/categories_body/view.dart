@@ -20,8 +20,8 @@ class CategoriesBodyView extends StatelessWidget {
       itemCount: categorey.length + 1,
       itemBuilder: (context, index) {
         if (index == categorey.length) {
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
+          return const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Center(
                 child: CustomText(
                     text: "This is the final result.",
