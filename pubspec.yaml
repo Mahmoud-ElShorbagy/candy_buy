@@ -149,7 +149,7 @@ flutter:
          - asset: assets/fonts/static/Fredoka_SemiCondensed-SemiBold.ttf
            weight: 600
          - asset: assets/fonts/static/Fredoka_SemiExpanded-Bold.ttf
-           weight: 600
+           weight: 700
          - asset: assets/fonts/static/Fredoka_SemiExpanded-Light.ttf
            weight: 300
          - asset: assets/fonts/static/Fredoka_SemiExpanded-Medium.ttf
@@ -165,7 +165,7 @@ flutter:
          - asset: assets/fonts/static/Fredoka-Medium.ttf
            weight: 500
          - asset: assets/fonts/static/Fredoka-Regular.ttf
-           weight: 900
+           weight: 400
          - asset: assets/fonts/static/Fredoka-SemiBold.ttf
            weight: 600
   #       - asset: fonts/Schyler-Italic.ttf
@@ -197,7 +197,7 @@ flutter:
          - asset: assets/fonts/static/Nunito-MediumItalic.ttf
            weight: 500
          - asset: assets/fonts/static/Nunito-Regular.ttf
-           weight: 700
+           weight: 400
          - asset: assets/fonts/static/Nunito-SemiBold.ttf
            weight: 700
          - asset: assets/fonts/static/Nunito-SemiBoldItalic.ttf
