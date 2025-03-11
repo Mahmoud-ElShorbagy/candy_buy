@@ -24,7 +24,6 @@ class TimeView extends StatelessWidget {
           text: time,
           color: AppColors.textTimeColor,
           fontWeight: FontWeight.w700,
-          fontFamily: "Fredoka",
         ),
       ],
     );
