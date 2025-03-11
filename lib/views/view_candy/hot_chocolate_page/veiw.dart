@@ -50,7 +50,9 @@ class HotChocolatePageView extends StatelessWidget {
                       width: product.width,
                       height: product.height),
                   ProductDetails(
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: index >= 3 && index <= 6
+                          ? EdgeInsets.only(right: 50)
+                          : EdgeInsets.only(right: 10),
                       title: product.name,
                       price: product.price),
                   BlocListener<ProductCubit, ProductState>(
