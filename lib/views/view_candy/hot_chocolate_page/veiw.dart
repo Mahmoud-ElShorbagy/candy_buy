@@ -51,7 +51,7 @@ class HotChocolatePageView extends StatelessWidget {
                       height: product.height),
                   ProductDetails(
                       margin: index >= 3 && index <= 6
-                          ? EdgeInsets.only(right: 50)
+                          ? EdgeInsets.only(right: 40)
                           : EdgeInsets.only(right: 10),
                       title: product.name,
                       price: product.price),
