@@ -10,7 +10,7 @@ final List<String> nameHotCh = [
   "Hot Chocalate",
   "Marshmallow Chocolate",
   "Mint Chocolate",
-  "Salted Caramel Chocolate",
+  "Salted Caramel",
   "Sweet Hot Chocalate",
   "Warm Milk Chocolate",
   "Warm Spice Chocolate",
