@@ -47,6 +47,7 @@ class DonutsPageView extends StatelessWidget {
                       width: productDonut[index].width,
                       height: productDonut[index].height),
                   ProductDetails(
+                      margin: EdgeInsets.only(right: 80),
                       title: productDonut[index].name,
                       price: productDonut[index].price),
                   BlocListener<ProductCubit, ProductState>(
