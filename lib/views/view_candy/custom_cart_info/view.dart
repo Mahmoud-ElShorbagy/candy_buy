@@ -38,7 +38,7 @@ class CustomCartInfoView extends StatelessWidget {
                 fontSize: 20,
                 text: title,
                 color: AppColors.textBoldColor,
-                fontWeghit: FontWeight.w400),
+                fontWeghit: FontWeight.w700),
             CustomText(
                 text: content,
                 fontWeight: FontWeight.w700,

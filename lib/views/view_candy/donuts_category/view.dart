@@ -8,6 +8,7 @@ class DonutsCategoryView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomCategoryProduct(
+      width: 350,
       title: "Donuts",
       titleCart: "Unicorn Donuts",
       contentCart: "The world famous unicorn",

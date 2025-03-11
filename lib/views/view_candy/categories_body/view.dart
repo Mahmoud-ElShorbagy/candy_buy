@@ -24,7 +24,7 @@ class CategoriesBodyView extends StatelessWidget {
             padding: const EdgeInsets.all(16.0),
             child: Center(
                 child: CustomText(
-                    text: "This is the final result",
+                    text: "This is the final result.",
                     fontWeight: FontWeight.w700,
                     color: AppColors.textBoldColor,
                     fontSize: 16)),
