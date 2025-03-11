@@ -13,7 +13,7 @@ class AppText extends StatelessWidget {
             fontSize: 24,
             text: textBold,
             color: AppColors.textBoldColor,
-            fontWeghit: FontWeight.w900),
+            fontWeghit: FontWeight.w700),
         const SizedBox(height: 12),
         SizedBox(
           height: 85,
