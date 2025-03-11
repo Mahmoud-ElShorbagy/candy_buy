@@ -40,4 +40,13 @@ class RouteUtils {
         ? RouteNames.homeview
         : RouteNames.onboardingview;
   }
+
+  static Future<void> signOut(BuildContext context) async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.pushNamedAndRemoveUntil(
+        // ignore: use_build_context_synchronously
+        context,
+        RouteNames.login,
+        (route) => false);
+  }
 }
