@@ -17,12 +17,14 @@ class HeaderNav extends StatelessWidget {
       width: 190,
       height: 48,
       margin: const EdgeInsets.only(left: 12, top: 48, bottom: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          InkWell(
-            onTap: () => RouteUtils.goBack(context),
-            child: const SizedBox(
+      child: InkWell(
+        onTap: () {
+          RouteUtils.goBack(context);
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(
               height: 32,
               width: 32,
               child: Center(
@@ -32,13 +34,13 @@ class HeaderNav extends StatelessWidget {
                     height: 16),
               ),
             ),
-          ),
-          CustomText(
-              text: title,
-              fontWeight: FontWeight.w700,
-              color: AppColors.textBoldColor,
-              fontSize: 14),
-        ],
+            CustomText(
+                text: title,
+                fontWeight: FontWeight.w700,
+                color: AppColors.textBoldColor,
+                fontSize: 14),
+          ],
+        ),
       ),
     );
   }
