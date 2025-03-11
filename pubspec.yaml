@@ -118,90 +118,36 @@ flutter:
   fonts:
      - family: Fredoka
        fonts:
-         - asset: assets/fonts/static/Fredoka_Condensed-Bold.ttf
-           weight: 700 
-         - asset: assets/fonts/static/Fredoka_Condensed-Light.ttf
-           weight: 300
-         - asset: assets/fonts/static/Fredoka_Condensed-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/static/Fredoka_Condensed-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/static/Fredoka_Condensed-SemiBold.ttf
-           weight: 600
-         - asset: assets/fonts/static/Fredoka_Expanded-Bold.ttf
-           weight: 700
-         - asset: assets/fonts/static/Fredoka_Expanded-Light.ttf
-           weight: 300
-         - asset: assets/fonts/static/Fredoka_Expanded-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/static/Fredoka_Expanded-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/static/Fredoka_Expanded-SemiBold.ttf
-           weight: 600
-         - asset: assets/fonts/static/Fredoka_SemiCondensed-Bold.ttf
-           weight: 600
-         - asset: assets/fonts/static/Fredoka_SemiCondensed-Light.ttf
-           weight: 300
-         - asset: assets/fonts/static/Fredoka_SemiCondensed-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/static/Fredoka_SemiCondensed-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/static/Fredoka_SemiCondensed-SemiBold.ttf
-           weight: 600
-         - asset: assets/fonts/static/Fredoka_SemiExpanded-Bold.ttf
-           weight: 700
-         - asset: assets/fonts/static/Fredoka_SemiExpanded-Light.ttf
-           weight: 300
-         - asset: assets/fonts/static/Fredoka_SemiExpanded-Medium.ttf
-           weight: 500
-         - asset: assets/fonts/static/Fredoka_SemiExpanded-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/static/Fredoka_SemiExpanded-SemiBold.ttf
-           weight: 600
          - asset: assets/fonts/static/Fredoka-Bold.ttf
            weight: 700
-         - asset: assets/fonts/static/Fredoka-Light.ttf
-           weight: 300
+         - asset: assets/fonts/static/Fredoka-SemiBold.ttf
+           weight: 600
          - asset: assets/fonts/static/Fredoka-Medium.ttf
            weight: 500
          - asset: assets/fonts/static/Fredoka-Regular.ttf
            weight: 400
-         - asset: assets/fonts/static/Fredoka-SemiBold.ttf
-           weight: 600
+         - asset: assets/fonts/static/Fredoka-Light.ttf
+           weight: 300
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
      - family: Nunito
        fonts:
-         - asset: assets/fonts/Nunito-VariableFont_wght.ttf
-           weight: 700
          - asset: assets/fonts/static/Nunito-Black.ttf
-           weight: 700
-         - asset: assets/fonts/static/Nunito-BlackItalic.ttf
-           weight: 900
-         - asset: assets/fonts/static/Nunito-Bold.ttf
-           weight: 700
+           weight: 800
          - asset: assets/fonts/static/Nunito-ExtraBold.ttf
            weight: 800
-         - asset: assets/fonts/static/Nunito-ExtraBoldItalic.ttf
-           weight: 800
-         - asset: assets/fonts/static/Nunito-ExtraLight.ttf
-           weight: 200
-         - asset: assets/fonts/static/Nunito-Italic.ttf
+         - asset: assets/fonts/static/Nunito-Bold.ttf
            weight: 700
-         - asset: assets/fonts/static/Nunito-Light.ttf
-           weight: 300
-         - asset: assets/fonts/static/Nunito-LightItalic.ttf
-           weight: 700
+         - asset: assets/fonts/static/Nunito-SemiBold.ttf
+           weight: 600
          - asset: assets/fonts/static/Nunito-Medium.ttf
            weight: 500
-         - asset: assets/fonts/static/Nunito-MediumItalic.ttf
-           weight: 500
          - asset: assets/fonts/static/Nunito-Regular.ttf
-           weight: 400
-         - asset: assets/fonts/static/Nunito-SemiBold.ttf
-           weight: 700
-         - asset: assets/fonts/static/Nunito-SemiBoldItalic.ttf
-           weight: 700
+           weight: 400  
+         - asset: assets/fonts/static/Nunito-Light.ttf
+           weight: 300
+         - asset: assets/fonts/static/Nunito-ExtraLight.ttf
+           weight: 200
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
