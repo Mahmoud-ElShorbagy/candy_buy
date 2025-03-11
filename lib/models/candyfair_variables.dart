@@ -14,7 +14,7 @@ final List<String> nameCandy = [
   "Green Toffee Dessert",
   "Heart Lollipops Sweets",
   "Jelly Candy Sweets  ",
-  "Milk Strawberry Lollipops",
+  "Strawberry Lollipops",
   "Pink Cotton Candy",
   "Sugared Lollipops",
   "Sweet Floral Lollipops",
