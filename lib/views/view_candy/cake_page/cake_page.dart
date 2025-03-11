@@ -49,7 +49,7 @@ class CakePageView extends StatelessWidget {
                       width: product.width,
                       height: product.height),
                   ProductDetails(
-                      margin: const EdgeInsets.only(right: 10),
+                      margin: EdgeInsets.zero,
                       title: product.name,
                       price: product.price),
                   BlocListener<ProductCubit, ProductState>(
