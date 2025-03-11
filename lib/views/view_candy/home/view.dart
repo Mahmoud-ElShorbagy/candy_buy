@@ -3,9 +3,8 @@ import 'package:candy_buy/views/view_candy/title/view.dart';
 import 'package:candy_buy/views/view_candy/app_bar/view.dart';
 import 'package:candy_buy/views/view_candy/scrollable_candy_List/view.dart';
 import 'package:candy_buy/widgets/app_text.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../../core/route_utils/route_names.dart';
+import '../../../core/route_utils/route_utils.dart';
 import '../categories_body/view.dart';
 
 class HomeView extends StatelessWidget {
@@ -20,12 +19,7 @@ class HomeView extends StatelessWidget {
           actions: [
             IconButton(
                 onPressed: () async {
-                  await FirebaseAuth.instance.signOut();
-                  Navigator.pushNamedAndRemoveUntil(
-                      // ignore: use_build_context_synchronously
-                      context,
-                      RouteNames.login,
-                      (route) => false);
+                  RouteUtils.signOut(context);
                 },
                 icon: const Icon(Icons.logout))
           ],
