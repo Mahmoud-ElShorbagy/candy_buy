@@ -22,7 +22,7 @@ class CustomContentCategoryView extends StatelessWidget {
           fontSize: 20,
           text: title,
           color: AppColors.textBoldColor,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w600,
           fontFamily: "Fredoka",
         ),
         const SizedBox(
