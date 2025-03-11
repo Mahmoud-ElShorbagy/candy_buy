@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
               fontSize: 24,
               text: 'Nearby Restaurants',
               color: AppColors.textBoldColor,
-              fontWeight: FontWeight.w400,
+              fontWeight: FontWeight.w600,
               fontFamily: "Fredoka",
             ),
             const SizedBox(
