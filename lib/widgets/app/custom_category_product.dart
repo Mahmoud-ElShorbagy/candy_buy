@@ -3,7 +3,6 @@ import 'package:candy_buy/views/view_candy/header_nav/veiw.dart';
 import 'package:flutter/material.dart';
 
 import '../../views/view_candy/custom_cart_info/view.dart';
-import '../app_text.dart';
 import '../custom_image.dart';
 
 class CustomCategoryProduct extends StatelessWidget {
