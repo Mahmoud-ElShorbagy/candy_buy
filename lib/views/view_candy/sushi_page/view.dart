@@ -50,7 +50,7 @@ class SuchisPageView extends StatelessWidget {
                 ),
               if (index == 2)
                 Container(
-                  margin: const EdgeInsets.only(right: 290, top: 24),
+                  margin: const EdgeInsets.only(right: 310, top: 24),
                   child: const CustomText(
                     text: "All Items",
                     fontWeight: FontWeight.w600,
