@@ -69,12 +69,12 @@ class AppSearchDelegate extends SearchDelegate {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (query.isNotEmpty)
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 24),
               child: CustomText(
-                text: "Search Results",
+                text: items.isEmpty ? "" : "Search Results",
                 fontSize: 24,
-                color: AppColors.texthintColor,
+                color: AppColors.textBoldColor,
                 fontWeight: FontWeight.w600,
                 fontFamily: "Fredoka",
               ),
@@ -86,7 +86,8 @@ class AppSearchDelegate extends SearchDelegate {
                 text: "There Are No Results",
                 fontSize: 24,
                 color: AppColors.textBoldColor,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
+                fontFamily: "Ferdoka",
               ),
             ),
           Expanded(
