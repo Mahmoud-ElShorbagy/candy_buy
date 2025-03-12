@@ -10,6 +10,7 @@ import '../../../widgets/app/custom_product_list_view.dart';
 import '../../../widgets/app_snackbar.dart';
 import '../../../widgets/app_text.dart';
 import '../../../widgets/custom_button_add.dart';
+import '../../../widgets/final_result_widget.dart';
 import '../../../widgets/product_details.dart';
 import '../../../widgets/products.dart';
 
@@ -25,69 +26,89 @@ class ICeCreamPageView extends StatelessWidget {
         itemCount: productIceCream.length + 1,
         itemBuilder: (context, index) {
           if (index == productIceCream.length) {
-            return const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Center(
-                  child: CustomText(
-                      text: "This is the final result",
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.textBoldColor,
-                      fontSize: 16)),
-            );
+            return buildFinalResuiltWidget();
           }
           final product = productIceCream[index];
-          return Container(
-            margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 25),
-            width: 340,
-            height: 52,
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Products(
-                      imagesProduct: product.imagesUrl,
-                      width: product.width,
-                      height: product.height),
-                  ProductDetails(
-                      margin: EdgeInsets.zero,
-                      title: product.name,
-                      price: product.price),
-                  BlocListener<ProductCubit, ProductState>(
-                    listener: (context, state) {
-                      if (state is ProductSuccess && !state.isSnackBarShow) {
-                        appSnackBar(
-                          context,
-                          state.message,
-                          onVisible: () {
-                            state.isSnackBarShow = false;
-                          },
-                        );
-                        state.isSnackBarShow = true;
-                      } else if (state is ProductSuccess &&
-                          !state.isSnackBarShow) {
-                        appSnackBar(context, state.message, onVisible: () {
-                          state.isSnackBarShow = false;
-                        });
-                        state.isSnackBarShow = true;
-                      }
-                    },
-                    child: CustomButtonAdd(onTap: () {
-                      if (index == index) {
-                        ProductCubit cubit = ProductCubit.get(context);
-                        Navigator.pushNamed(
-                            context, RouteNames.bagProductsisview);
-                        cubit.addProduct(
-                          ProductDTO(
-                              name: nameIceCream[index],
-                              imagesUrl: imagesUrlIceCream[index],
-                              price: priceIceCream[index],
-                              width: widthIceCream[index],
-                              height: heightIceCream[index]),
-                        );
-                      }
-                    }),
-                  )
-                ]),
+          return Column(
+            children: [
+              if (index == 0)
+                Container(
+                  margin: const EdgeInsets.only(top: 24, right: 290),
+                  child: const CustomText(
+                    text: "Best Sellers",
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textBoldColor,
+                    fontSize: 16,
+                    fontFamily: "Fredoka",
+                  ),
+                ),
+              if (index == 2)
+                Container(
+                  margin: const EdgeInsets.only(right: 310, top: 24),
+                  child: const CustomText(
+                    text: "All Items",
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textBoldColor,
+                    fontSize: 16,
+                    fontFamily: "Fredoka",
+                  ),
+                ),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 25),
+                width: 360,
+                height: 52,
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Products(
+                          imagesProduct: product.imagesUrl,
+                          width: product.width,
+                          height: product.height),
+                      ProductDetails(
+                          margin: EdgeInsets.zero,
+                          title: product.name,
+                          price: product.price),
+                      BlocListener<ProductCubit, ProductState>(
+                        listener: (context, state) {
+                          if (state is ProductSuccess &&
+                              !state.isSnackBarShow) {
+                            appSnackBar(
+                              context,
+                              state.message,
+                              onVisible: () {
+                                state.isSnackBarShow = false;
+                              },
+                            );
+                            state.isSnackBarShow = true;
+                          } else if (state is ProductSuccess &&
+                              !state.isSnackBarShow) {
+                            appSnackBar(context, state.message, onVisible: () {
+                              state.isSnackBarShow = false;
+                            });
+                            state.isSnackBarShow = true;
+                          }
+                        },
+                        child: CustomButtonAdd(onTap: () {
+                          if (index == index) {
+                            ProductCubit cubit = ProductCubit.get(context);
+                            Navigator.pushNamed(
+                                context, RouteNames.bagProductsisview);
+                            cubit.addProduct(
+                              ProductDTO(
+                                  name: nameIceCream[index],
+                                  imagesUrl: imagesUrlIceCream[index],
+                                  price: priceIceCream[index],
+                                  width: widthIceCream[index],
+                                  height: heightIceCream[index]),
+                            );
+                          }
+                        }),
+                      )
+                    ]),
+              ),
+            ],
           );
         },
       ),

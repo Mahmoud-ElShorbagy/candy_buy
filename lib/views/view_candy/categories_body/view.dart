@@ -1,9 +1,9 @@
 import 'package:candy_buy/core/helpers/app_colors.dart';
 import 'package:candy_buy/core/route_utils/route_utils.dart';
 import 'package:candy_buy/models/category_variables.dart';
-import 'package:candy_buy/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../../widgets/final_result_widget.dart';
 import '../icon_heart/view.dart';
 import '../../../widgets/app/custom_categories.dart';
 import '../../../widgets/app/custom_content_category.dart';
@@ -20,15 +20,7 @@ class CategoriesBodyView extends StatelessWidget {
       itemCount: categorey.length + 1,
       itemBuilder: (context, index) {
         if (index == categorey.length) {
-          return const Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Center(
-                child: CustomText(
-                    text: "This is the final result.",
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.textBoldColor,
-                    fontSize: 16)),
-          );
+          return buildFinalResuiltWidget();
         }
         final categories = categorey[index];
         return InkWell(
