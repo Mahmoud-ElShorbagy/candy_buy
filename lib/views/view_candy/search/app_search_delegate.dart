@@ -75,7 +75,8 @@ class AppSearchDelegate extends SearchDelegate {
                 text: "Search Results",
                 fontSize: 24,
                 color: AppColors.texthintColor,
-                fontWeight: FontWeight.w400,
+                fontWeight: FontWeight.w600,
+                fontFamily: "Fredoka",
               ),
             ),
           if (items.isEmpty)
