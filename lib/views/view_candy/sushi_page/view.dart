@@ -35,58 +35,86 @@ class SuchisPageView extends StatelessWidget {
                       fontSize: 16)),
             );
           }
-          return Container(
-            margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 25),
-            width: 340,
-            height: 52,
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Products(
-                      imagesProduct: productSuchi[index].imagesUrl,
-                      width: productSuchi[index].width,
-                      height: productSuchi[index].height),
-                  ProductDetails(
-                      margin: EdgeInsets.only(),
-                      title: productSuchi[index].name,
-                      price: productSuchi[index].price),
-                  BlocListener<ProductCubit, ProductState>(
-                    listener: (context, state) {
-                      if (state is ProductSuccess && !state.isSnackBarShow) {
-                        appSnackBar(
-                          context,
-                          state.message,
-                          onVisible: () {
-                            state.isSnackBarShow = false;
-                          },
-                        );
-                        state.isSnackBarShow = true;
-                      } else if (state is ProductSuccess &&
-                          !state.isSnackBarShow) {
-                        appSnackBar(context, state.message, onVisible: () {
-                          state.isSnackBarShow = false;
-                        });
-                        state.isSnackBarShow = true;
-                      }
-                    },
-                    child: CustomButtonAdd(onTap: () {
-                      if (index == index) {
-                        ProductCubit cubit = ProductCubit.get(context);
-                        Navigator.pushNamed(
-                            context, RouteNames.bagProductsisview);
-                        cubit.addProduct(
-                          ProductDTO(
-                              name: nameSuchis[index],
-                              imagesUrl: imagesUrlSuchis[index],
-                              price: priceSuchis[index],
-                              width: widthSuchis[index],
-                              height: heightSuchis[index]),
-                        );
-                      }
-                    }),
-                  )
-                ]),
+          return Column(
+            children: [
+              if (index == 0)
+                Container(
+                  margin: const EdgeInsets.only(top: 24, right: 290),
+                  child: const CustomText(
+                    text: "Best Sellers",
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textBoldColor,
+                    fontSize: 16,
+                    fontFamily: "Fredoka",
+                  ),
+                ),
+              if (index == 2)
+                Container(
+                  margin: const EdgeInsets.only(right: 290, top: 24),
+                  child: const CustomText(
+                    text: "All Items",
+                    fontWeight: FontWeight.w600,
+                    color: AppColors.textBoldColor,
+                    fontSize: 16,
+                    fontFamily: "Fredoka",
+                  ),
+                ),
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(vertical: 16, horizontal: 25),
+                width: 340,
+                height: 52,
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Products(
+                          imagesProduct: productSuchi[index].imagesUrl,
+                          width: productSuchi[index].width,
+                          height: productSuchi[index].height),
+                      ProductDetails(
+                          margin: EdgeInsets.only(),
+                          title: productSuchi[index].name,
+                          price: productSuchi[index].price),
+                      BlocListener<ProductCubit, ProductState>(
+                        listener: (context, state) {
+                          if (state is ProductSuccess &&
+                              !state.isSnackBarShow) {
+                            appSnackBar(
+                              context,
+                              state.message,
+                              onVisible: () {
+                                state.isSnackBarShow = false;
+                              },
+                            );
+                            state.isSnackBarShow = true;
+                          } else if (state is ProductSuccess &&
+                              !state.isSnackBarShow) {
+                            appSnackBar(context, state.message, onVisible: () {
+                              state.isSnackBarShow = false;
+                            });
+                            state.isSnackBarShow = true;
+                          }
+                        },
+                        child: CustomButtonAdd(onTap: () {
+                          if (index == index) {
+                            ProductCubit cubit = ProductCubit.get(context);
+                            Navigator.pushNamed(
+                                context, RouteNames.bagProductsisview);
+                            cubit.addProduct(
+                              ProductDTO(
+                                  name: nameSuchis[index],
+                                  imagesUrl: imagesUrlSuchis[index],
+                                  price: priceSuchis[index],
+                                  width: widthSuchis[index],
+                                  height: heightSuchis[index]),
+                            );
+                          }
+                        }),
+                      )
+                    ]),
+              ),
+            ],
           );
         },
       ),
