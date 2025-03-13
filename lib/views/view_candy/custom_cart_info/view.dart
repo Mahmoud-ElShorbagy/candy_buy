@@ -20,42 +20,52 @@ class CustomCartInfoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 16, right: 19),
-      height: 131,
-      width: width,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: AppColors.backgroundWhiteColor,
-      ),
-      child: Row(children: [
+    return Column(
+      children: [
         Container(
-          margin: const EdgeInsets.only(
-              left: 28, top: 22.5, bottom: 22.5, right: 32),
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            AppTextBold(
-                fontSize: 20,
-                text: title,
-                color: AppColors.textBoldColor,
-                fontWeghit: FontWeight.w700),
-            CustomText(
-                text: content,
-                fontWeight: FontWeight.w700,
-                color: AppColors.textSecondaryColor700,
-                fontSize: 14),
-            CustomText(
-                text: subContent,
-                fontWeight: FontWeight.w700,
-                color: AppColors.textSecondaryColor700,
-                fontSize: 14),
+          margin: const EdgeInsets.only(left: 16, right: 19),
+          height: 131,
+          width: width,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: AppColors.backgroundWhiteColor,
+          ),
+          child: Row(children: [
+            Container(
+              margin: const EdgeInsets.only(
+                  left: 28, top: 22.5, bottom: 22.5, right: 32),
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AppTextBold(
+                        fontSize: 20,
+                        text: title,
+                        color: AppColors.textBoldColor,
+                        fontWeghit: FontWeight.w700),
+                    CustomText(
+                        text: content,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textSecondaryColor700,
+                        fontSize: 14),
+                    CustomText(
+                        text: subContent,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.textSecondaryColor700,
+                        fontSize: 14),
+                  ]),
+            ),
+            Container(
+              margin:
+                  const EdgeInsets.only(top: 10.04, bottom: 10.04, right: 20),
+              child:
+                  CustomImageWidget(imagePath: image, width: 89, height: 111),
+            )
           ]),
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 10.04, bottom: 10.04, right: 20),
-          child: CustomImageWidget(imagePath: image, width: 89, height: 111),
+        const SizedBox(
+          height: 24,
         )
-      ]),
+      ],
     );
   }
 }
