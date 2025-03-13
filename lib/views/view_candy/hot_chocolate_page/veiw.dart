@@ -34,7 +34,7 @@ class HotChocolatePageView extends StatelessWidget {
             children: [
               if (index == 0)
                 Container(
-                  margin: const EdgeInsets.only(top: 24, right: 290),
+                  margin: const EdgeInsets.only(right: 290),
                   child: const CustomText(
                     text: "Best Sellers",
                     fontWeight: FontWeight.w600,
