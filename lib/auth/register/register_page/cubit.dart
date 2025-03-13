@@ -2,6 +2,7 @@ import 'package:candy_buy/controllers/database_controller.dart';
 import 'package:candy_buy/models/user_data.dart';
 import 'package:candy_buy/services/auth.dart';
 import 'package:candy_buy/utilities/constants.dart';
+import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,29 +1,42 @@
 part of 'cubit.dart';
 
 @immutable
-sealed class LoginState {}
+sealed class LoginState extends Equatable {}
 
-final class LoginInitial extends LoginState {}
+final class LoginInitial extends LoginState {
+  @override
+  List<Object?> get props => [];
+}
 
-class LoginLoading extends LoginState {}
+class LoginLoading extends LoginState {
+  @override
+  List<Object?> get props => [];
+}
 
 class LoginSuccess extends LoginState {
   final String message;
+  @override
+  List<Object?> get props => [message];
   LoginSuccess({required this.message});
 }
 
 class LoginError extends LoginState {
   final String message;
+  @override
+  List<Object?> get props => [message];
   LoginError({required this.message});
 }
 
 class LoginFailure extends LoginState {
   final String message;
+  @override
+  List<Object?> get props => [message];
   LoginFailure({required this.message});
 }
 
 class SendVerification extends LoginState {
   final String message;
-
+  @override
+  List<Object?> get props => [message];
   SendVerification({required this.message});
 }

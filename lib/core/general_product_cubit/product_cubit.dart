@@ -1,4 +1,5 @@
 import 'package:candy_buy/models/product_dto.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,6 +1,9 @@
 part of 'total_price_cubit.dart';
 
 @immutable
-sealed class TotalPriceState {}
+sealed class TotalPriceState extends Equatable {}
 
-final class TotalPriceInitial extends TotalPriceState {}
+class TotalPriceInitial extends TotalPriceState {
+  @override
+  List<Object?> get props => [];
+}
