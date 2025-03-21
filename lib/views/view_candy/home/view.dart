@@ -23,14 +23,13 @@ class HomeView extends StatelessWidget {
                 },
                 icon: const Icon(Icons.logout))
           ],
-          title: const Text("Welcom to shop Candy"),
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 19),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const AppBarView(),
-            const TitleView(),
+            TitleView(),
             Container(
                 margin: const EdgeInsets.only(top: 18, bottom: 28),
                 child: const ScrollableCandyListView()),
