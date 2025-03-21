@@ -23,7 +23,7 @@ class HomeView extends StatelessWidget {
                 },
                 icon: const Icon(Icons.logout))
           ],
-          title: const Text("Welcom to shop Candy "),
+          title: const Text("Welcom to shop Candy"),
         ),
         body: Padding(
           padding: const EdgeInsets.only(left: 19),
