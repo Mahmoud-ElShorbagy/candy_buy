@@ -1,4 +1,5 @@
 import 'package:candy_buy/core/helpers/app_colors.dart';
+import 'package:candy_buy/core/route_utils/route_names.dart';
 import 'package:candy_buy/views/view_candy/header_nav/veiw.dart';
 import 'package:flutter/material.dart';
 
@@ -33,12 +34,17 @@ class CustomCategoryProduct extends StatelessWidget {
             HeaderNav(
               title: title ?? "",
             ),
-            Container(
-              margin: const EdgeInsets.only(left: 140, top: 30),
-              child: const CustomImageWidget(
-                  imagePath: "assets/images/view/heart-outline.svg",
-                  width: 32,
-                  height: 32),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, RouteNames.favoritesPage);
+              },
+              child: Container(
+                margin: const EdgeInsets.only(left: 140, top: 30),
+                child: const CustomImageWidget(
+                    imagePath: "assets/images/view/heart-outline.svg",
+                    width: 32,
+                    height: 32),
+              ),
             ),
           ],
         ),
