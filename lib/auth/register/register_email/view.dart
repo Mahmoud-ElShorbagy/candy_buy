@@ -20,6 +20,8 @@ class RegisterEmailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String nameController =
+        ModalRoute.of(context)!.settings.arguments as String;
     return ListView(
       children: [
         Container(
@@ -35,8 +37,8 @@ class RegisterEmailView extends StatelessWidget {
                   width: 158,
                   height: 174),
             ),
-            const AppText(
-                textBold: "Hi Shambhavi!",
+            AppText(
+                textBold: "Hi $nameController.",
                 text:
                     "You’ve got such a nice name. Now, let’s start with some important ones. I am noting these details in my diary")
           ],

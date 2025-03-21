@@ -1,10 +1,13 @@
+import 'package:candy_buy/auth/register/register_name/view.dart';
 import 'package:candy_buy/core/helpers/app_colors.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../widgets/app_text.dart';
 
 class TitleView extends StatelessWidget {
-  const TitleView({super.key});
+  const TitleView({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class TitleView extends StatelessWidget {
           margin: EdgeInsets.only(right: 35),
           child: CustomText(
             fontSize: 24,
-            text: 'Hello Shambhavi,',
+            text: 'Hello $enterName,',
             color: AppColors.textBoldColor,
             fontWeight: FontWeight.w600,
             fontFamily: "Fredoka",

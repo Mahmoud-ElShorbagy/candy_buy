@@ -16,8 +16,12 @@ class RegisterNameView extends StatefulWidget {
   State<RegisterNameView> createState() => _RegisterNameViewState();
 }
 
+String enterName = "";
+
 class _RegisterNameViewState extends State<RegisterNameView> {
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final formKey = GlobalKey<FormState>();
+  final nameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,6 +50,12 @@ class _RegisterNameViewState extends State<RegisterNameView> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: CustomTextField(
+                  onChanged: (v) {
+                    setState(() {
+                      enterName = v;
+                    });
+                  },
+                  controller: nameController,
                   validator: (v) {
                     return Validators.name(v);
                   },
@@ -61,7 +71,8 @@ class _RegisterNameViewState extends State<RegisterNameView> {
                 text: "Next",
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    Navigator.pushNamed(context, RouteNames.register);
+                    Navigator.pushNamed(context, RouteNames.register,
+                        arguments: nameController.text);
                   }
                 }),
             const SizedBox(
