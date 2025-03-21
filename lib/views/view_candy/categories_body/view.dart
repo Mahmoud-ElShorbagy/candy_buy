@@ -9,11 +9,18 @@ import '../../../widgets/app/custom_categories.dart';
 import '../../../widgets/app/custom_content_category.dart';
 import '../tiem/view.dart';
 
-class CategoriesBodyView extends StatelessWidget {
+class CategoriesBodyView extends StatefulWidget {
   const CategoriesBodyView({
     super.key,
   });
 
+  @override
+  State<CategoriesBodyView> createState() => _CategoriesBodyViewState();
+}
+
+List<bool> isPressedList = List.generate(categorey.length, (index) => false);
+
+class _CategoriesBodyViewState extends State<CategoriesBodyView> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -56,10 +63,15 @@ class CategoriesBodyView extends StatelessWidget {
                     ),
                   ),
                   IconHeart(
-                    onTap: () {},
+                    onTap: () {
+                      setState(() {
+                        isPressedList[index] = !isPressedList[index];
+                      });
+                    },
                     marginLeft: categories.marginLeft,
-                    icons: categories.icons,
-                    index: index,
+                    icons: isPressedList[index]
+                        ? categories.images
+                        : categories.icons,
                   ),
                 ],
               )),

@@ -151,7 +151,6 @@ class AppSearchDelegate extends SearchDelegate {
               onTap: () {},
               marginLeft: marginLeft[index],
               icons: icons[index],
-              index: index,
             ),
           ],
         ),

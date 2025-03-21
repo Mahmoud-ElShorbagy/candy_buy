@@ -6,13 +6,11 @@ class IconHeart extends StatelessWidget {
     super.key,
     required this.marginLeft,
     required this.icons,
-    required this.index,
     this.onTap,
   });
   final void Function()? onTap;
   final double marginLeft;
   final String icons;
-  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
