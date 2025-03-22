@@ -13,6 +13,7 @@ import '../../auth/login/view.dart';
 import '../../auth/register/candy_gate/view.dart';
 import '../../auth/register/register_page/view.dart';
 import '../../auth/register/register_name/view.dart';
+import '../../views/view_candy/favorites_page/view.dart';
 import '../../views/walk_through/view.dart';
 import '../../views/view_candy/cake_category/view.dart';
 import '../../views/view_candy/candyfair_category/veiw.dart';
@@ -83,6 +84,10 @@ class RouteGenerator {
       case RouteNames.hotChocolate:
         return MaterialPageRoute(
           builder: (context) => const HotChocolateCategoryView(),
+        );
+      case RouteNames.favoritesPage:
+        return MaterialPageRoute(
+          builder: (context) => const FavoritesPageView(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const WalkthroughView());
