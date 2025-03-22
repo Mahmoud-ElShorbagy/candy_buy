@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 class ProductDTO {
   final String id;
   final String name;
@@ -93,4 +94,30 @@ class CategoreytDTO {
     required this.width,
     required this.height,
   });
+
+  @override
+  bool operator ==(covariant CategoreytDTO other) {
+    if (identical(this, other)) return true;
+
+    return other.title == title &&
+        other.content == content &&
+        other.time == time &&
+        other.icons == icons &&
+        other.marginLeft == marginLeft &&
+        other.images == images &&
+        other.width == width &&
+        other.height == height;
+  }
+
+  @override
+  int get hashCode {
+    return title.hashCode ^
+        content.hashCode ^
+        time.hashCode ^
+        icons.hashCode ^
+        marginLeft.hashCode ^
+        images.hashCode ^
+        width.hashCode ^
+        height.hashCode;
+  }
 }
