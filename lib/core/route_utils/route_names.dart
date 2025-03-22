@@ -19,4 +19,5 @@ class RouteNames {
   static const String chocolate = "/chocolate";
   static const String iceCream = '/icCream';
   static const String hotChocolate = '/hotChocolate';
+  static const String favoritesPage = '/favoritesPage';
 }
