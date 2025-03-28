@@ -70,7 +70,7 @@ class AppSearchDelegate extends SearchDelegate {
         children: [
           if (query.isNotEmpty)
             Padding(
-              padding: EdgeInsets.only(left: 24),
+              padding: const EdgeInsets.only(left: 24),
               child: CustomText(
                 text: items.isEmpty ? "" : "Search Results",
                 fontSize: 24,
@@ -81,13 +81,24 @@ class AppSearchDelegate extends SearchDelegate {
             ),
           if (items.isEmpty)
             Container(
-              margin: const EdgeInsets.only(top: 280, left: 80),
-              child: const CustomText(
-                text: "There Are No Results",
-                fontSize: 24,
-                color: AppColors.textBoldColor,
-                fontWeight: FontWeight.w600,
-                fontFamily: "Ferdoka",
+              alignment: Alignment.center,
+              child: const Column(
+                children: [
+                  SizedBox(height: 100),
+                  CustomImageWidget(
+                    imagePath: "assets/images/view/result.svg",
+                    height: 286,
+                    width: 244,
+                  ),
+                  SizedBox(height: 47),
+                  CustomText(
+                    text: "There Are No Results",
+                    fontSize: 24,
+                    color: AppColors.textBoldColor,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Ferdoka",
+                  ),
+                ],
               ),
             ),
           Expanded(
