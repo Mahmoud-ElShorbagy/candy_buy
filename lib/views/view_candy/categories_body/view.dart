@@ -13,18 +13,11 @@ import '../../../widgets/app/custom_categories.dart';
 import '../../../widgets/app/custom_content_category.dart';
 import '../tiem/view.dart';
 
-class CategoriesBodyView extends StatefulWidget {
+class CategoriesBodyView extends StatelessWidget {
   const CategoriesBodyView({
     super.key,
   });
 
-  @override
-  State<CategoriesBodyView> createState() => _CategoriesBodyViewState();
-}
-
-List<bool> isPressedList = List.generate(categorey.length, (index) => false);
-
-class _CategoriesBodyViewState extends State<CategoriesBodyView> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -70,12 +63,14 @@ class _CategoriesBodyViewState extends State<CategoriesBodyView> {
                     ),
                     BlocConsumer<FavoritesItemCubit, FavoritesItemState>(
                       builder: (context, state) {
+                        final cubit = FavoritesItemCubit.get(context);
                         return IconHeart(
                           onTap: () {
                             final cubit = FavoritesItemCubit.get(context);
-                            setState(() {
-                              isPressedList[index] = !isPressedList[index];
-                            });
+
+                            cubit.isPressedList[index] =
+                                !cubit.isPressedList[index];
+
                             if (index == index) {
                               cubit.addFavorit(CategoreytDTO(
                                   title: title[index],
@@ -89,7 +84,7 @@ class _CategoriesBodyViewState extends State<CategoriesBodyView> {
                             }
                           },
                           marginLeft: categories.marginLeft,
-                          icons: isPressedList[index]
+                          icons: cubit.isPressedList[index]
                               ? categories.images
                               : categories.icons,
                         );
