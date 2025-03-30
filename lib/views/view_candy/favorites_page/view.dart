@@ -4,6 +4,7 @@ import 'package:candy_buy/views/view_candy/tiem/view.dart';
 import 'package:candy_buy/widgets/app/custom_categories.dart';
 import 'package:candy_buy/widgets/app/custom_content_category.dart';
 import 'package:candy_buy/widgets/app_text.dart';
+import 'package:candy_buy/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/helpers/app_colors.dart';
@@ -29,15 +30,25 @@ class FavoritesPageView extends StatelessWidget {
               itemCount: categoryFavorit.isEmpty ? 1 : categoryFavorit.length,
               itemBuilder: (context, index) {
                 if (categoryFavorit.isEmpty) {
-                  return Center(
-                    child: Container(
-                      margin: EdgeInsets.only(top: 300),
-                      child: CustomText(
-                        text: "Favorites List Is Empty.",
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.textBoldColor,
-                        fontSize: 16,
-                      ),
+                  return Container(
+                    alignment: Alignment.center,
+                    child: const Column(
+                      children: [
+                        SizedBox(height: 100),
+                        CustomImageWidget(
+                          imagePath: "assets/images/view/feed_back.svg",
+                          height: 282,
+                          width: 260,
+                        ),
+                        SizedBox(height: 24),
+                        CustomText(
+                          text: "Add your favorite sweets",
+                          fontSize: 20,
+                          color: AppColors.textBoldColor,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: "Ferdoka",
+                        ),
+                      ],
                     ),
                   );
                 } else {
