@@ -1,5 +1,8 @@
 import 'package:candy_buy/core/helpers/app_colors.dart';
+import 'package:candy_buy/models/product_dto.dart';
+import 'package:candy_buy/views/view_candy/favorites_page/cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/route_utils/route_utils.dart';
 import '../../../models/category_variables.dart';
@@ -128,42 +131,67 @@ class AppSearchDelegate extends SearchDelegate {
   }
 
   Widget _buildCategoryItem(int index, BuildContext context) {
-    return InkWell(
-      onTap: () => RouteUtils.navigateToCategory(categorey[index], context),
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 19, vertical: 12),
-        width: 373,
-        height: 174,
-        decoration: BoxDecoration(
-          color: AppColors.backgroundWhiteColor,
-          borderRadius: BorderRadius.circular(16),
-        ),
-        child: Row(
-          children: [
-            CustomCategoriesView(
-              images: images[index],
-              width: width[index],
-              height: height[index],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TimeView(time: time[index]),
-                  CustomContentCategoryView(
-                    title: title[index],
-                    content: content[index],
-                  ),
-                ],
+    return BlocProvider(
+      create: (context) => FavoritesItemCubit(),
+      child: InkWell(
+        onTap: () => RouteUtils.navigateToCategory(categorey[index], context),
+        child: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 19, vertical: 12),
+          width: 373,
+          height: 174,
+          decoration: BoxDecoration(
+            color: AppColors.backgroundWhiteColor,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Row(
+            children: [
+              CustomCategoriesView(
+                images: images[index],
+                width: width[index],
+                height: height[index],
               ),
-            ),
-            IconHeart(
-              onTap: () {},
-              marginLeft: marginLeft[index],
-              icons: icons[index],
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    TimeView(time: time[index]),
+                    CustomContentCategoryView(
+                      title: title[index],
+                      content: content[index],
+                    ),
+                  ],
+                ),
+              ),
+              BlocBuilder<FavoritesItemCubit, FavoritesItemState>(
+                builder: (context, state) {
+                  final cubit = FavoritesItemCubit.get(context);
+
+                  return IconHeart(
+                    onTap: () {
+                      cubit.isPressedList[index] = !cubit.isPressedList[index];
+
+                      if (index == index) {
+                        cubit.addFavorit(CategoreytDTO(
+                            title: title[index],
+                            content: content[index],
+                            time: time[index],
+                            icons: icons[index],
+                            marginLeft: marginLeft[index],
+                            images: images[index],
+                            width: width[index],
+                            height: height[index]));
+                      }
+                    },
+                    marginLeft: marginLeft[index],
+                    icons: cubit.isPressedList[index]
+                        ? categorey[index].images
+                        : categorey[index].icons,
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
