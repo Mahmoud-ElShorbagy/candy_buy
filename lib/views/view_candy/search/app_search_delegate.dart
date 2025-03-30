@@ -131,10 +131,11 @@ class AppSearchDelegate extends SearchDelegate {
   }
 
   Widget _buildCategoryItem(int index, BuildContext context) {
+    final categories = category[index];
     return BlocProvider(
       create: (context) => FavoritesItemCubit(),
       child: InkWell(
-        onTap: () => RouteUtils.navigateToCategory(categorey[index], context),
+        onTap: () => RouteUtils.navigateToCategory(categories, context),
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 19, vertical: 12),
           width: 373,
@@ -185,8 +186,8 @@ class AppSearchDelegate extends SearchDelegate {
                     },
                     marginLeft: marginLeft[index],
                     icons: cubit.isPressedList[index]
-                        ? categorey[index].images
-                        : categorey[index].icons,
+                        ? categories.images
+                        : categories.icons,
                   );
                 },
               ),

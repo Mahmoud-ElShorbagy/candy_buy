@@ -23,12 +23,12 @@ class CategoriesBodyView extends StatelessWidget {
     return BlocProvider(
       create: (context) => FavoritesItemCubit(),
       child: ListView.builder(
-        itemCount: categorey.length + 1,
+        itemCount: category.length + 1,
         itemBuilder: (context, index) {
-          if (index == categorey.length) {
+          if (index == category.length) {
             return buildFinalResuiltWidget();
           }
-          final categories = categorey[index];
+          final categories = category[index];
           return InkWell(
             onTap: () {
               RouteUtils.navigateToCategory(categories, context);

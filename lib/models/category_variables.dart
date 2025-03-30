@@ -53,7 +53,7 @@ final List<double> marginLeft = [
   55,
   10,
 ];
-final List<CategoreytDTO> categorey = [
+final List<CategoreytDTO> category = [
   ...List.generate(
     images.length,
     (index) => CategoreytDTO(

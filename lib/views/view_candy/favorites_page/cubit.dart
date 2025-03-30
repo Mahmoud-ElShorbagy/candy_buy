@@ -10,13 +10,13 @@ part 'state.dart';
 class FavoritesItemCubit extends Cubit<FavoritesItemState> {
   FavoritesItemCubit() : super(FavoritesItemInitial());
   static FavoritesItemCubit get(context) => BlocProvider.of(context);
-  List<bool> isPressedList = List.generate(categorey.length, (index) => false);
+  List<bool> isPressedList = List.generate(category.length, (index) => false);
   void addFavorit(CategoreytDTO categoreyDTO) {
-    if (!categoreyFavorit.contains(categoreyDTO)) {
-      categoreyFavorit.add(categoreyDTO);
+    if (!categoryFavorit.contains(categoreyDTO)) {
+      categoryFavorit.add(categoreyDTO);
       emit(FavoritesItemSuccess("Product Successfully Added To Favorites"));
     } else {
-      categoreyFavorit.remove(categoreyDTO);
+      categoryFavorit.remove(categoreyDTO);
       emit(FavoritesItemSuccess("Product Removed From Favorites"));
     }
   }

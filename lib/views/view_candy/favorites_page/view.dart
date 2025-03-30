@@ -1,4 +1,3 @@
-import 'package:candy_buy/core/route_utils/route_names.dart';
 import 'package:candy_buy/core/route_utils/route_utils.dart';
 import 'package:candy_buy/models/category_variables.dart';
 import 'package:candy_buy/views/view_candy/tiem/view.dart';
@@ -11,7 +10,7 @@ import '../../../core/helpers/app_colors.dart';
 import '../../../models/product_dto.dart';
 import '../header_nav/veiw.dart';
 
-List<CategoreytDTO> categoreyFavorit = [];
+List<CategoreytDTO> categoryFavorit = [];
 
 class FavoritesPageView extends StatelessWidget {
   const FavoritesPageView({super.key});
@@ -27,9 +26,9 @@ class FavoritesPageView extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               padding: EdgeInsets.all(16),
-              itemCount: categoreyFavorit.isEmpty ? 1 : categoreyFavorit.length,
+              itemCount: categoryFavorit.isEmpty ? 1 : categoryFavorit.length,
               itemBuilder: (context, index) {
-                if (categoreyFavorit.isEmpty) {
+                if (categoryFavorit.isEmpty) {
                   return Center(
                     child: Container(
                       margin: EdgeInsets.only(top: 300),
@@ -42,10 +41,10 @@ class FavoritesPageView extends StatelessWidget {
                     ),
                   );
                 } else {
-                  final categorey = categoreyFavorit[index];
+                  final category = categoryFavorit[index];
                   return InkWell(
                     onTap: () {
-                      RouteUtils.navigateToCategory(categorey, context);
+                      RouteUtils.navigateToCategory(category, context);
                     },
                     child: Container(
                       margin: const EdgeInsets.only(bottom: 12, right: 19),
@@ -58,9 +57,9 @@ class FavoritesPageView extends StatelessWidget {
                       child: Row(
                         children: [
                           CustomCategoriesView(
-                            images: categorey.images,
-                            width: categorey.width,
-                            height: categorey.height,
+                            images: category.images,
+                            width: category.width,
+                            height: category.height,
                           ),
                           Container(
                             margin: const EdgeInsets.only(top: 40),
@@ -69,8 +68,8 @@ class FavoritesPageView extends StatelessWidget {
                               children: [
                                 TimeView(time: time[index]),
                                 CustomContentCategoryView(
-                                  title: categorey.title,
-                                  content: categorey.content,
+                                  title: category.title,
+                                  content: category.content,
                                 ),
                               ],
                             ),
