@@ -2,31 +2,28 @@ import 'package:candy_buy/core/route_utils/route_names.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../models/product_dto.dart';
+
 class RouteUtils {
-  static void navigateToCategory(int index, BuildContext context) {
-    switch (index) {
-      case 0:
+  static void navigateToCategory(
+      CategoreytDTO categorey, BuildContext context) {
+    switch (categorey.images) {
+      case "assets/images/view/sweetsuchi.svg":
         Navigator.pushNamed(context, RouteNames.suchi);
         break;
-      case 1:
+      case "assets/images/view/Donut.svg":
         Navigator.pushNamed(context, RouteNames.donuts);
-        break;
-      case 2:
+      case "assets/images/view/creamCake.svg":
         Navigator.pushNamed(context, RouteNames.cake);
-        break;
-      case 3:
+      case "assets/images/view/Candylolipop.svg":
         Navigator.pushNamed(context, RouteNames.candy);
-        break;
-      case 4:
+      case "assets/images/view/choclatelap.svg":
         Navigator.pushNamed(context, RouteNames.chocolate);
-        break;
-      case 5:
+      case "assets/images/view/shakesrages.svg":
         Navigator.pushNamed(context, RouteNames.iceCream);
-        break;
-      case 6:
+      case "assets/images/view/hotchoclate.svg":
         Navigator.pushNamed(context, RouteNames.hotChocolate);
       default:
-        Navigator.pushNamed(context, RouteNames.donuts);
     }
   }
 

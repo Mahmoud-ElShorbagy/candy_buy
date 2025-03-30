@@ -1,3 +1,5 @@
+import 'package:candy_buy/core/route_utils/route_names.dart';
+import 'package:candy_buy/core/route_utils/route_utils.dart';
 import 'package:candy_buy/models/category_variables.dart';
 import 'package:candy_buy/views/view_candy/tiem/view.dart';
 import 'package:candy_buy/widgets/app/custom_categories.dart';
@@ -41,35 +43,40 @@ class FavoritesPageView extends StatelessWidget {
                   );
                 } else {
                   final categorey = categoreyFavorit[index];
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 12, right: 19),
-                    width: 373,
-                    height: 174,
-                    decoration: BoxDecoration(
-                      color: AppColors.backgroundWhiteColor,
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Row(
-                      children: [
-                        CustomCategoriesView(
-                          images: categorey.images,
-                          width: categorey.width,
-                          height: categorey.height,
-                        ),
-                        Container(
-                          margin: const EdgeInsets.only(top: 40),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              TimeView(time: time[index]),
-                              CustomContentCategoryView(
-                                title: categorey.title,
-                                content: categorey.content,
-                              ),
-                            ],
+                  return InkWell(
+                    onTap: () {
+                      RouteUtils.navigateToCategory(categorey, context);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 12, right: 19),
+                      width: 373,
+                      height: 174,
+                      decoration: BoxDecoration(
+                        color: AppColors.backgroundWhiteColor,
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      child: Row(
+                        children: [
+                          CustomCategoriesView(
+                            images: categorey.images,
+                            width: categorey.width,
+                            height: categorey.height,
                           ),
-                        ),
-                      ],
+                          Container(
+                            margin: const EdgeInsets.only(top: 40),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TimeView(time: time[index]),
+                                CustomContentCategoryView(
+                                  title: categorey.title,
+                                  content: categorey.content,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 }

@@ -129,7 +129,7 @@ class AppSearchDelegate extends SearchDelegate {
 
   Widget _buildCategoryItem(int index, BuildContext context) {
     return InkWell(
-      onTap: () => RouteUtils.navigateToCategory(index, context),
+      onTap: () => RouteUtils.navigateToCategory(categorey[index], context),
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 19, vertical: 12),
         width: 373,

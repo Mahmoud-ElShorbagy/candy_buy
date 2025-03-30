@@ -31,7 +31,7 @@ class CategoriesBodyView extends StatelessWidget {
           final categories = categorey[index];
           return InkWell(
             onTap: () {
-              RouteUtils.navigateToCategory(index, context);
+              RouteUtils.navigateToCategory(categories, context);
             },
             child: Container(
                 margin: const EdgeInsets.only(bottom: 12, right: 19),
