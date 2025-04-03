@@ -9,7 +9,7 @@ void appSnackBar(
   final void Function()? onPressed,
 ) {
   ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(onVisible: ,
+    SnackBar(
       action: SnackBarAction(
           label: label,
           textColor: AppColors.backgroundWhiteColor,
