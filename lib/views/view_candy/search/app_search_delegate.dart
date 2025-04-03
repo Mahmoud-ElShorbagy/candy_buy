@@ -1,5 +1,4 @@
 import 'package:candy_buy/core/helpers/app_colors.dart';
-import 'package:candy_buy/models/product_dto.dart';
 import 'package:candy_buy/views/view_candy/favorites_page/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,7 +9,6 @@ import '../../../widgets/app/custom_categories.dart';
 import '../../../widgets/app/custom_content_category.dart';
 import '../../../widgets/app_text.dart';
 import '../../../widgets/custom_image.dart';
-import '../icon_heart/view.dart';
 import '../tiem/view.dart';
 
 class AppSearchDelegate extends SearchDelegate {
@@ -163,33 +161,6 @@ class AppSearchDelegate extends SearchDelegate {
                     ),
                   ],
                 ),
-              ),
-              BlocBuilder<FavoritesItemCubit, FavoritesItemState>(
-                builder: (context, state) {
-                  final cubit = FavoritesItemCubit.get(context);
-
-                  return IconHeart(
-                    onTap: () {
-                      cubit.isPressedList[index] = !cubit.isPressedList[index];
-
-                      if (index == index) {
-                        cubit.addFavorit(CategoreytDTO(
-                            title: title[index],
-                            content: content[index],
-                            time: time[index],
-                            icons: icons[index],
-                            marginLeft: marginLeft[index],
-                            images: images[index],
-                            width: width[index],
-                            height: height[index]));
-                      }
-                    },
-                    marginLeft: marginLeft[index],
-                    icons: cubit.isPressedList[index]
-                        ? categories.images
-                        : categories.icons,
-                  );
-                },
               ),
             ],
           ),
