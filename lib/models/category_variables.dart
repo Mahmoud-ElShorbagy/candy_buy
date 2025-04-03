@@ -13,7 +13,7 @@ final List<String> content = [
   "Sweet suchis,",
   "Classis, broken hear",
   "more tasty donuts",
-  "Cupcakes, buns, cherries,",
+  "Cupcakes, cherries,",
   "and decorative cakes",
   "Sweets, candies, nuts",
   "chocolates, and shakes",
@@ -44,15 +44,7 @@ final List<String> icons = [
 ];
 final List<int> width = [83, 89, 74, 91, 67, 61, 91];
 final List<int> height = [105, 105, 116, 116, 112, 118, 120];
-final List<double> marginLeft = [
-  50,
-  30,
-  50,
-  0,
-  50,
-  55,
-  10,
-];
+
 final List<CategoreytDTO> category = [
   ...List.generate(
     images.length,
@@ -61,7 +53,6 @@ final List<CategoreytDTO> category = [
         content: content[index],
         time: time[index],
         icons: icons[index],
-        marginLeft: marginLeft[index],
         images: images[index],
         width: width[index],
         height: height[index]),

@@ -79,7 +79,6 @@ class CategoreytDTO {
   final String content;
   final String time;
   final String icons;
-  final double marginLeft;
   final String images;
   final int width;
   final int height;
@@ -89,7 +88,6 @@ class CategoreytDTO {
     required this.content,
     required this.time,
     required this.icons,
-    required this.marginLeft,
     required this.images,
     required this.width,
     required this.height,
@@ -103,7 +101,6 @@ class CategoreytDTO {
         other.content == content &&
         other.time == time &&
         other.icons == icons &&
-        other.marginLeft == marginLeft &&
         other.images == images &&
         other.width == width &&
         other.height == height;
@@ -115,7 +112,6 @@ class CategoreytDTO {
         content.hashCode ^
         time.hashCode ^
         icons.hashCode ^
-        marginLeft.hashCode ^
         images.hashCode ^
         width.hashCode ^
         height.hashCode;

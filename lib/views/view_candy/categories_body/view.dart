@@ -62,32 +62,38 @@ class CategoriesBodyView extends StatelessWidget {
                         ],
                       ),
                     ),
+                    Spacer(),
                     BlocConsumer<FavoritesItemCubit, FavoritesItemState>(
                       builder: (context, state) {
                         final cubit = FavoritesItemCubit.get(context);
-                        return IconHeart(
-                          onTap: () {
-                            final cubit = FavoritesItemCubit.get(context);
+                        return Row(
+                          children: [
+                            IconHeart(
+                              onTap: () {
+                                final cubit = FavoritesItemCubit.get(context);
 
-                            cubit.isPressedList[index] =
-                                !cubit.isPressedList[index];
+                                cubit.isPressedList[index] =
+                                    !cubit.isPressedList[index];
 
-                            if (index == index) {
-                              cubit.addFavorit(CategoreytDTO(
-                                  title: title[index],
-                                  content: content[index],
-                                  time: time[index],
-                                  icons: icons[index],
-                                  marginLeft: marginLeft[index],
-                                  images: images[index],
-                                  width: width[index],
-                                  height: height[index]));
-                            }
-                          },
-                          marginLeft: categories.marginLeft,
-                          icons: cubit.isPressedList[index]
-                              ? categories.images
-                              : categories.icons,
+                                if (index == index) {
+                                  cubit.addFavorit(CategoreytDTO(
+                                      title: title[index],
+                                      content: content[index],
+                                      time: time[index],
+                                      icons: icons[index],
+                                      images: images[index],
+                                      width: width[index],
+                                      height: height[index]));
+                                }
+                              },
+                              icons: cubit.isPressedList[index]
+                                  ? categories.images
+                                  : categories.icons,
+                            ),
+                            SizedBox(
+                              width: 16,
+                            ),
+                          ],
                         );
                       },
                       listener:
