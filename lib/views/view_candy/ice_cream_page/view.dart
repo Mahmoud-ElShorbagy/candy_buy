@@ -89,8 +89,7 @@ class ICeCreamPageView extends StatelessWidget {
                         },
                         child: CustomButtonAdd(onTap: () {
                           ProductCubit cubit = ProductCubit.get(context);
-                          Navigator.pushNamed(
-                              context, RouteNames.bagProductsisview);
+
                           cubit.addProduct(
                             ProductDTO(
                                 name: nameIceCream[index],
