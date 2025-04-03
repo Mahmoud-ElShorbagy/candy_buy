@@ -42,21 +42,7 @@ final List<int> heightChocolate = [
     (index) => 50,
   ),
 ];
-final List<int> priceChocolate = [
-  3,
-  5,
-  4,
-  4,
-  8,
-  3,
-  10,
-  3,
-  5,
-  4,
-  4,
-  8,
-  3,
-];
+final List<int> priceChocolate = [3, 5, 4, 4, 8, 3, 10, 3, 5, 4, 4, 8, 3, 10];
 
 final List<ProductDTO> productChocolate = [
   for (int i = 0; i < imagesUrlChocolate.length; i++)

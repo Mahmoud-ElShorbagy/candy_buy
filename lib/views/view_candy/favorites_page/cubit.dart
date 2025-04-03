@@ -14,7 +14,7 @@ class FavoritesItemCubit extends Cubit<FavoritesItemState> {
   void addFavorit(CategoreytDTO categoreyDTO) {
     if (!categoryFavorit.contains(categoreyDTO)) {
       categoryFavorit.add(categoreyDTO);
-      emit(FavoritesItemSuccess("Product Successfully Added To Favorites"));
+      emit(FavoritesItemSuccess("Product Added To Favorites"));
     } else {
       categoryFavorit.remove(categoreyDTO);
       emit(FavoritesItemSuccess("Product Removed From Favorites"));

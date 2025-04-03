@@ -67,10 +67,11 @@ class CandyFairPageView extends StatelessWidget {
                           imagesProduct: product.imagesUrl,
                           width: product.width,
                           height: product.height),
-                      ProductDetails(
-                          margin: EdgeInsets.zero,
-                          title: product.name,
-                          price: product.price),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      ProductDetails(title: product.name, price: product.price),
+                      Spacer(),
                       BlocListener<ProductCubit, ProductState>(
                         listener: (context, state) {
                           if (state is ProductSuccess &&
@@ -78,33 +79,26 @@ class CandyFairPageView extends StatelessWidget {
                             appSnackBar(
                               context,
                               state.message,
-                              onVisible: () {
-                                state.isSnackBarShow = false;
+                              "View Bag",
+                              () {
+                                Navigator.pushNamed(
+                                    context, RouteNames.bagProductsisview);
                               },
                             );
-                            state.isSnackBarShow = true;
-                          } else if (state is ProductSuccess &&
-                              !state.isSnackBarShow) {
-                            appSnackBar(context, state.message, onVisible: () {
-                              state.isSnackBarShow = false;
-                            });
                             state.isSnackBarShow = true;
                           }
                         },
                         child: CustomButtonAdd(onTap: () {
-                          if (index == index) {
-                            ProductCubit cubit = ProductCubit.get(context);
-                            Navigator.pushNamed(
-                                context, RouteNames.bagProductsisview);
-                            cubit.addProduct(
-                              ProductDTO(
-                                  name: nameCandy[index],
-                                  imagesUrl: imagesUrlCandy[index],
-                                  price: priceCandy[index],
-                                  width: widthCandy[index],
-                                  height: heightCandy[index]),
-                            );
-                          }
+                          ProductCubit cubit = ProductCubit.get(context);
+
+                          cubit.addProduct(
+                            ProductDTO(
+                                name: nameCandy[index],
+                                imagesUrl: imagesUrlCandy[index],
+                                price: priceCandy[index],
+                                width: widthCandy[index],
+                                height: heightCandy[index]),
+                          );
                         }),
                       )
                     ]),

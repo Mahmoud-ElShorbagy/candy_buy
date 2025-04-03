@@ -45,10 +45,12 @@ class CustomCartItem extends StatelessWidget {
                       imagesProduct: product[index].imagesUrl,
                       width: product[index].width,
                       height: product[index].height),
+                  SizedBox(
+                    width: 8,
+                  ),
                   ProductDetails(
-                      margin: const EdgeInsets.only(right: 30),
-                      title: product[index].name,
-                      price: product[index].price),
+                      title: product[index].name, price: product[index].price),
+                  Spacer(),
                   Builder(builder: (context) {
                     return ProductCounterVeiw(
                       onUpdateTotalPrice: () {

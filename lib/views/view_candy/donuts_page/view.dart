@@ -64,10 +64,13 @@ class DonutsPageView extends StatelessWidget {
                           imagesProduct: productDonut[index].imagesUrl,
                           width: productDonut[index].width,
                           height: productDonut[index].height),
+                      SizedBox(
+                        width: 8,
+                      ),
                       ProductDetails(
-                          margin: EdgeInsets.only(right: 80),
                           title: productDonut[index].name,
                           price: productDonut[index].price),
+                      Spacer(),
                       BlocListener<ProductCubit, ProductState>(
                         listener: (context, state) {
                           if (state is ProductSuccess &&
@@ -75,36 +78,31 @@ class DonutsPageView extends StatelessWidget {
                             appSnackBar(
                               context,
                               state.message,
-                              onVisible: () {
-                                state.isSnackBarShow = false;
+                              "View Bag",
+                              () {
+                                Navigator.pushNamed(
+                                  context,
+                                  RouteNames.bagProductsisview,
+                                );
                               },
                             );
                             state.isSnackBarShow = true;
-                          } else if (state is ProductSuccess &&
-                              !state.isSnackBarShow) {
-                            appSnackBar(context, state.message, onVisible: () {
-                              state.isSnackBarShow = false;
-                            });
-                            state.isSnackBarShow = true;
                           }
                         },
-                        child: CustomButtonAdd(onTap: () {
-                          if (index == index) {
+                        child: CustomButtonAdd(
+                          onTap: () {
                             ProductCubit cubit = ProductCubit.get(context);
-                            Navigator.pushNamed(
-                              context,
-                              RouteNames.bagProductsisview,
-                            );
                             cubit.addProduct(
                               ProductDTO(
-                                  name: nameDonut[index],
-                                  imagesUrl: imagesUrlDonut[index],
-                                  price: priceDonut[index],
-                                  width: widthDonut[index],
-                                  height: heightDonut[index]),
+                                name: nameDonut[index],
+                                imagesUrl: imagesUrlDonut[index],
+                                price: priceDonut[index],
+                                width: widthDonut[index],
+                                height: heightDonut[index],
+                              ),
                             );
-                          }
-                        }),
+                          },
+                        ),
                       )
                     ]),
               ),

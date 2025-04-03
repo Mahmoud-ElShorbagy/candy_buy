@@ -46,7 +46,7 @@ class ForgetPasswordView extends StatelessWidget {
               BlocConsumer<ForgetpasswordCubit, ForgetpasswordState>(
                 listener: (context, state) async {
                   if (state is ForgetpasswordSuccess) {
-                    appSnackBar(context, state.message);
+                    appSnackBar(context, state.message, "Close", null);
                     Navigator.pushReplacementNamed(
                       context,
                       RouteNames.emailsent,
@@ -54,7 +54,7 @@ class ForgetPasswordView extends StatelessWidget {
                           ForgetpasswordCubit.get(context).emailController.text,
                     );
                   } else if (state is ForgetpasswordError) {
-                    appSnackBar(context, state.message);
+                    appSnackBar(context, state.message, "Close", null);
                   }
                 },
                 builder: (context, state) {

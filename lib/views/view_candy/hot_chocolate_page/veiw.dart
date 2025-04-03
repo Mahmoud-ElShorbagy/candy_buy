@@ -67,12 +67,11 @@ class HotChocolatePageView extends StatelessWidget {
                           imagesProduct: product.imagesUrl,
                           width: product.width,
                           height: product.height),
-                      ProductDetails(
-                          margin: index >= 3 && index <= 6
-                              ? EdgeInsets.only(right: 40)
-                              : EdgeInsets.only(right: 10),
-                          title: product.name,
-                          price: product.price),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      ProductDetails(title: product.name, price: product.price),
+                      Spacer(),
                       BlocListener<ProductCubit, ProductState>(
                         listener: (context, state) {
                           if (state is ProductSuccess &&
@@ -80,33 +79,26 @@ class HotChocolatePageView extends StatelessWidget {
                             appSnackBar(
                               context,
                               state.message,
-                              onVisible: () {
-                                state.isSnackBarShow = false;
+                              "View Bag",
+                              () {
+                                Navigator.pushNamed(
+                                    context, RouteNames.bagProductsisview);
                               },
                             );
-                            state.isSnackBarShow = true;
-                          } else if (state is ProductSuccess &&
-                              !state.isSnackBarShow) {
-                            appSnackBar(context, state.message, onVisible: () {
-                              state.isSnackBarShow = false;
-                            });
                             state.isSnackBarShow = true;
                           }
                         },
                         child: CustomButtonAdd(onTap: () {
-                          if (index == index) {
-                            ProductCubit cubit = ProductCubit.get(context);
-                            Navigator.pushNamed(
-                                context, RouteNames.bagProductsisview);
-                            cubit.addProduct(
-                              ProductDTO(
-                                  name: nameHotCh[index],
-                                  imagesUrl: imagesUrlHotCh[index],
-                                  price: priceChocolate[index],
-                                  width: widthHotCh[index],
-                                  height: heightHotCh[index]),
-                            );
-                          }
+                          ProductCubit cubit = ProductCubit.get(context);
+
+                          cubit.addProduct(
+                            ProductDTO(
+                                name: nameHotCh[index],
+                                imagesUrl: imagesUrlHotCh[index],
+                                price: priceChocolate[index],
+                                width: widthHotCh[index],
+                                height: heightHotCh[index]),
+                          );
                         }),
                       )
                     ]),

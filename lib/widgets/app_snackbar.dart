@@ -2,15 +2,18 @@ import 'package:candy_buy/core/helpers/app_colors.dart';
 import 'package:candy_buy/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
-appSnackBar(BuildContext context, String content,
-    {void Function()? onVisible}) {
+void appSnackBar(
+  final BuildContext context,
+  final String content,
+  final String label,
+  final void Function()? onPressed,
+) {
   ScaffoldMessenger.of(context).showSnackBar(
-    SnackBar(
-      onVisible: onVisible,
+    SnackBar(onVisible: ,
       action: SnackBarAction(
-          label: "Close",
+          label: label,
           textColor: AppColors.backgroundWhiteColor,
-          onPressed: () {}),
+          onPressed: onPressed ?? () {}),
       backgroundColor: AppColors.textPrimaryColor,
       content: CustomText(
         text: content,

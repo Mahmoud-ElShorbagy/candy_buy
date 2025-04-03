@@ -65,10 +65,13 @@ class SuchisPageView extends StatelessWidget {
                           imagesProduct: productSuchi[index].imagesUrl,
                           width: productSuchi[index].width,
                           height: productSuchi[index].height),
+                      SizedBox(
+                        width: 8,
+                      ),
                       ProductDetails(
-                          margin: EdgeInsets.only(),
                           title: productSuchi[index].name,
                           price: productSuchi[index].price),
+                      Spacer(),
                       BlocListener<ProductCubit, ProductState>(
                         listener: (context, state) {
                           if (state is ProductSuccess &&
@@ -76,33 +79,25 @@ class SuchisPageView extends StatelessWidget {
                             appSnackBar(
                               context,
                               state.message,
-                              onVisible: () {
-                                state.isSnackBarShow = false;
+                              "View Bag",
+                              () {
+                                Navigator.pushNamed(
+                                    context, RouteNames.bagProductsisview);
                               },
                             );
-                            state.isSnackBarShow = true;
-                          } else if (state is ProductSuccess &&
-                              !state.isSnackBarShow) {
-                            appSnackBar(context, state.message, onVisible: () {
-                              state.isSnackBarShow = false;
-                            });
                             state.isSnackBarShow = true;
                           }
                         },
                         child: CustomButtonAdd(onTap: () {
-                          if (index == index) {
-                            ProductCubit cubit = ProductCubit.get(context);
-                            Navigator.pushNamed(
-                                context, RouteNames.bagProductsisview);
-                            cubit.addProduct(
-                              ProductDTO(
-                                  name: nameSuchis[index],
-                                  imagesUrl: imagesUrlSuchis[index],
-                                  price: priceSuchis[index],
-                                  width: widthSuchis[index],
-                                  height: heightSuchis[index]),
-                            );
-                          }
+                          ProductCubit cubit = ProductCubit.get(context);
+                          cubit.addProduct(
+                            ProductDTO(
+                                name: nameSuchis[index],
+                                imagesUrl: imagesUrlSuchis[index],
+                                price: priceSuchis[index],
+                                width: widthSuchis[index],
+                                height: heightSuchis[index]),
+                          );
                         }),
                       )
                     ]),

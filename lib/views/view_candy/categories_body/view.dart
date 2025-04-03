@@ -1,4 +1,5 @@
 import 'package:candy_buy/core/helpers/app_colors.dart';
+import 'package:candy_buy/core/route_utils/route_names.dart';
 import 'package:candy_buy/core/route_utils/route_utils.dart';
 import 'package:candy_buy/models/category_variables.dart';
 import 'package:candy_buy/models/product_dto.dart';
@@ -93,9 +94,15 @@ class CategoriesBodyView extends StatelessWidget {
                           (BuildContext context, FavoritesItemState state) {
                         if (state is FavoritesItemSuccess &&
                             !state.isShowSnackBar) {
-                          appSnackBar(context, state.message, onVisible: () {
-                            state.isShowSnackBar = false;
-                          });
+                          appSnackBar(
+                            context,
+                            state.message,
+                            "View Page",
+                            () {
+                              Navigator.pushNamed(
+                                  context, RouteNames.favoritesPage);
+                            },
+                          );
                           state.isShowSnackBar = true;
                         }
                       },
