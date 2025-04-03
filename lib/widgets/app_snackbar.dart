@@ -10,7 +10,7 @@ void appSnackBar(
 ) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      duration: const Duration(milliseconds: 1000),
+      duration: const Duration(milliseconds: 1500),
       action: SnackBarAction(
           label: label,
           textColor: AppColors.backgroundWhiteColor,

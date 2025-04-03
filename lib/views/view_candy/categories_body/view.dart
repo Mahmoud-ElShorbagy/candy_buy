@@ -75,16 +75,14 @@ class CategoriesBodyView extends StatelessWidget {
                                 cubit.isPressedList[index] =
                                     !cubit.isPressedList[index];
 
-                                if (index == index) {
-                                  cubit.addFavorit(CategoreytDTO(
-                                      title: title[index],
-                                      content: content[index],
-                                      time: time[index],
-                                      icons: icons[index],
-                                      images: images[index],
-                                      width: width[index],
-                                      height: height[index]));
-                                }
+                                cubit.addFavorit(CategoreytDTO(
+                                    title: title[index],
+                                    content: content[index],
+                                    time: time[index],
+                                    icons: icons[index],
+                                    images: images[index],
+                                    width: width[index],
+                                    height: height[index]));
                               },
                               icons: cubit.isPressedList[index]
                                   ? categories.images
