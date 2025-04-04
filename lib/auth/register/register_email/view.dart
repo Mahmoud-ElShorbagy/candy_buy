@@ -1,9 +1,9 @@
+import 'package:candy_buy/core/route_utils/route_names.dart';
 import 'package:candy_buy/widgets/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helpers/validators.dart';
-import '../../../core/route_utils/route_utils.dart';
 import '../../../widgets/custom_logo.dart';
 import '../register_page/cubit.dart';
 import '../../../widgets/app_text.dart';
@@ -21,7 +21,7 @@ class RegisterEmailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String nameController =
-        ModalRoute.of(context)!.settings.arguments as String;
+        ModalRoute.of(context)?.settings.arguments as String? ?? "User";
     return ListView(
       children: [
         Container(
@@ -91,7 +91,7 @@ class RegisterEmailView extends StatelessWidget {
         Center(
           child: CustomTextRich(
             onTap: () {
-              RouteUtils.goBack(context);
+              Navigator.pushNamed(context, RouteNames.rigestername);
             },
             text: "Go back",
           ),

@@ -4,7 +4,6 @@ import 'package:candy_buy/views/view_candy/app_bar/view.dart';
 import 'package:candy_buy/views/view_candy/scrollable_candy_List/view.dart';
 import 'package:candy_buy/widgets/app_text.dart';
 import 'package:flutter/material.dart';
-import '../../../core/route_utils/route_utils.dart';
 import '../categories_body/view.dart';
 
 class HomeView extends StatelessWidget {

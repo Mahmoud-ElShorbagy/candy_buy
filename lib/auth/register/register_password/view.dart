@@ -19,6 +19,8 @@ class RegisterPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String nameController =
+        ModalRoute.of(context)?.settings.arguments as String? ?? "User";
     return ListView(
       children: [
         Container(
@@ -32,8 +34,8 @@ class RegisterPasswordView extends StatelessWidget {
               width: 158,
               height: 174),
         ),
-        const AppText(
-            textBold: "Hi Shabhavi!",
+        AppText(
+            textBold: "Hi $nameController!",
             text:
                 "Great, let’s choose a very strong password to keep your account safe from bad people out there "),
         const SizedBox(
