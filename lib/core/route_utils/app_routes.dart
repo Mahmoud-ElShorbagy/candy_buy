@@ -1,5 +1,6 @@
 import 'package:candy_buy/core/route_utils/route_generator.dart';
 import 'package:candy_buy/core/route_utils/route_names.dart';
+import 'package:candy_buy/views/view_candy/profile/view.dart';
 import 'package:flutter/material.dart';
 import 'package:candy_buy/auth/register/receive_code/view.dart';
 import 'package:candy_buy/views/view_candy/chocolate_category/veiw.dart';
@@ -38,6 +39,7 @@ class AppRoutes {
     RouteNames.chocolate: (context) => const ChocolateCategoryView(),
     RouteNames.iceCream: (context) => const IceCreamCategoryView(),
     RouteNames.hotChocolate: (context) => const HotChocolateCategoryView(),
+    RouteNames.profile: (context) => const ProfileView(),
   };
   static Route<dynamic> generateRoute(RouteSettings settings) {
     return RouteGenerator.generateRoute(settings);

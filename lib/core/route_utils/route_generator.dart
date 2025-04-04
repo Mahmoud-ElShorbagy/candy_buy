@@ -5,6 +5,7 @@ import 'package:candy_buy/views/view_candy/donuts_category/view.dart';
 import 'package:candy_buy/views/view_candy/bag_products/view.dart';
 import 'package:candy_buy/views/view_candy/home/view.dart';
 import 'package:candy_buy/views/view_candy/hot_chocolate/veiw.dart';
+import 'package:candy_buy/views/view_candy/profile/view.dart';
 import 'package:candy_buy/views/view_candy/suchis_category/view.dart';
 import 'package:flutter/material.dart';
 import '../../auth/email_sent/view.dart';
@@ -88,6 +89,10 @@ class RouteGenerator {
       case RouteNames.favoritesPage:
         return MaterialPageRoute(
           builder: (context) => const FavoritesPageView(),
+        );
+      case RouteNames.profile:
+        return MaterialPageRoute(
+          builder: (context) => const ProfileView(),
         );
       default:
         return MaterialPageRoute(builder: (context) => const WalkthroughView());

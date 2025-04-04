@@ -14,7 +14,7 @@ class HeaderNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
+      width: 210,
       height: 48,
       margin: const EdgeInsets.only(left: 12, top: 48, bottom: 16),
       child: InkWell(

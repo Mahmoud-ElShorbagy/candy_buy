@@ -13,5 +13,7 @@ class AppColors {
   static const Color enabledBorederColor = Color.fromRGBO(242, 236, 230, 1);
   static const Color focusedBorederColor = Color.fromARGB(179, 074, 169, 1);
   static const Color couponColor = Color.fromRGBO(129, 170, 113, 1);
+  static const Color backgroundYellow_40 = Color(0xFFFFE1AE);
   static const Color errorBorederColor = Color(0xFFFF0000);
+  static const Color orange_100 = Color(0xFF4A2616);
 }

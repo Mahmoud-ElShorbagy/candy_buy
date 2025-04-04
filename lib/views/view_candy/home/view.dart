@@ -14,22 +14,14 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: AppColors.primaryColor,
-        appBar: AppBar(
-          backgroundColor: AppColors.primaryColor,
-          actions: [
-            IconButton(
-                onPressed: () async {
-                  RouteUtils.signOut(context);
-                },
-                icon: const Icon(Icons.logout))
-          ],
-          title: const Text("Welcom to shop Candy"),
-        ),
         body: Padding(
           padding: const EdgeInsets.only(left: 19),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            const AppBarView(),
+            const SizedBox(
+              height: 16,
+            ),
+            SafeArea(child: const AppBarView()),
             TitleView(),
             Container(
                 margin: const EdgeInsets.only(top: 18, bottom: 28),
