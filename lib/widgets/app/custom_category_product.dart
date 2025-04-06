@@ -39,7 +39,7 @@ class CustomCategoryProduct extends StatelessWidget {
                 Navigator.pushNamed(context, RouteNames.favoritesPage);
               },
               child: Container(
-                margin: const EdgeInsets.only(left: 140, top: 30),
+                margin: const EdgeInsets.only(left: 130, top: 30),
                 child: const CustomImageWidget(
                     imagePath: "assets/images/view/heart-outline.svg",
                     width: 32,

@@ -55,12 +55,18 @@ class RegisterPasswordView extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: CustomTextField(
+                        onTapIcon: () {
+                          cubit.togglePasswordVisibility();
+                        },
+                        obscureText: state is PasswordHidden,
                         validator: (v) {
                           return Validators.password(v);
                         },
                         controller: cubit.passwordController,
                         hint: 'Password',
-                        image: "assets/images/icons/lock.png",
+                        image: state is PasswordHidden
+                            ? "assets/images/icons/lock.png"
+                            : "assets/images/icons/openlock.png",
                       ),
                     ),
                     const SizedBox(

@@ -17,10 +17,18 @@ class RegisterCubit extends Cubit<RegisterState> {
   final formKey2 = GlobalKey<FormState>();
   final AuthBase authBase = Auth();
   PageController? pageController;
-  RegisterCubit() : super(SignupInitial());
+  RegisterCubit() : super(PasswordHidden());
   final FirebaseAuth auth = FirebaseAuth.instance;
   static RegisterCubit get(BuildContext context) {
     return BlocProvider.of(context);
+  }
+
+  void togglePasswordVisibility() {
+    if (state is PasswordHidden) {
+      emit(PasswordVisible());
+    } else {
+      emit(PasswordHidden());
+    }
   }
 
   Future<void> register() async {

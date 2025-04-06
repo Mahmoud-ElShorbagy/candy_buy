@@ -17,7 +17,10 @@ class CustomTextField extends StatelessWidget {
     this.onEditingComplete,
     this.enabled = true,
     this.onSearchPressed,
+    this.obscureText = false,
+    this.onTapIcon,
   });
+  final void Function()? onTapIcon;
   final void Function(String v)? onChanged;
   final void Function(String? v)? onSaved;
   final String? Function(String? v)? validator;
@@ -31,6 +34,7 @@ class CustomTextField extends StatelessWidget {
   final void Function()? onTap;
   final void Function()? onEditingComplete;
   final VoidCallback? onSearchPressed;
+  final bool obscureText;
   @override
   Widget build(BuildContext context) {
     final String displayedImage = image ?? initialImage ?? '';
@@ -41,6 +45,7 @@ class CustomTextField extends StatelessWidget {
         child: AbsorbPointer(
           absorbing: enabled == false,
           child: TextFormField(
+            obscureText: obscureText,
             enabled: enabled,
             onEditingComplete: onEditingComplete,
             onTap: onTap,
@@ -50,11 +55,14 @@ class CustomTextField extends StatelessWidget {
             validator: validator,
             decoration: InputDecoration(
               prefixIcon: displayedImage.isNotEmpty
-                  ? Container(
-                      width: width,
-                      height: height,
-                      margin: EdgeInsets.only(left: 16, right: 8),
-                      child: Image.asset(displayedImage))
+                  ? InkWell(
+                      onTap: onTapIcon,
+                      child: Container(
+                          width: width,
+                          height: height,
+                          margin: EdgeInsets.only(left: 16, right: 8),
+                          child: Image.asset(displayedImage)),
+                    )
                   : null,
               disabledBorder: buildBoreder(),
               enabledBorder: buildBoreder(),

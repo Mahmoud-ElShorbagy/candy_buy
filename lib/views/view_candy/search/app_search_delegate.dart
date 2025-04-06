@@ -85,7 +85,7 @@ class AppSearchDelegate extends SearchDelegate {
               alignment: Alignment.center,
               child: const Column(
                 children: [
-                  SizedBox(height: 100),
+                  SizedBox(height: 70),
                   CustomImageWidget(
                     imagePath: "assets/images/view/result.svg",
                     height: 286,

@@ -3,7 +3,12 @@ part of 'cubit.dart';
 @immutable
 sealed class LoginState extends Equatable {}
 
-final class LoginInitial extends LoginState {
+final class PasswordHidden extends LoginState {
+  @override
+  List<Object?> get props => [];
+}
+
+final class PasswordVisible extends LoginState {
   @override
   List<Object?> get props => [];
 }

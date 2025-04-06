@@ -12,9 +12,17 @@ class LoginCubit extends Cubit<LoginState> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-  LoginCubit() : super(LoginInitial());
+  LoginCubit() : super(PasswordHidden());
   static LoginCubit get(BuildContext context) {
     return BlocProvider.of(context);
+  }
+
+  void togglePasswordVisibility() {
+    if (state is PasswordHidden) {
+      emit(PasswordVisible());
+    } else {
+      emit(PasswordHidden());
+    }
   }
 
   Future<void> logIn() async {
