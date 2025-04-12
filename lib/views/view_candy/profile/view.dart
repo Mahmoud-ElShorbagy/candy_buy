@@ -32,7 +32,7 @@ class ProfileView extends StatelessWidget {
                 const SizedBox(height: 16),
                 const CustomText(
                     fontFamily: "Fredoka",
-                    text: "Shambhavi Mishra",
+                    text: "Mahmoud Elshorbagy",
                     fontWeight: FontWeight.w600,
                     color: AppColors.textBoldColor,
                     fontSize: 24),

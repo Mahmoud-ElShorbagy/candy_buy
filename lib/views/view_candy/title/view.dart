@@ -17,7 +17,9 @@ class TitleView extends StatelessWidget {
           margin: EdgeInsets.only(right: 35),
           child: CustomText(
             fontSize: 24,
-            text: 'Hello $enterName,',
+            text: enterName.isEmpty
+                ? "Hello, Mahmoud Elshorbagy"
+                : 'Hello $enterName,',
             color: AppColors.textBoldColor,
             fontWeight: FontWeight.w600,
             fontFamily: "Fredoka",
