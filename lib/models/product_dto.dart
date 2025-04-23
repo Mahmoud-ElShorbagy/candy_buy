@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 class ProductDTO {
   final String id;
@@ -74,7 +76,7 @@ class CandyDTO {
       {required this.imagesUrl, required this.width, required this.height});
 }
 
-class CategoreytDTO {
+class CategorytDTO {
   final String title;
   final String content;
   final String time;
@@ -83,7 +85,7 @@ class CategoreytDTO {
   final int width;
   final int height;
 
-  CategoreytDTO({
+  CategorytDTO({
     required this.title,
     required this.content,
     required this.time,
@@ -94,7 +96,7 @@ class CategoreytDTO {
   });
 
   @override
-  bool operator ==(covariant CategoreytDTO other) {
+  bool operator ==(covariant CategorytDTO other) {
     if (identical(this, other)) return true;
 
     return other.title == title &&
@@ -116,4 +118,33 @@ class CategoreytDTO {
         width.hashCode ^
         height.hashCode;
   }
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'title': title,
+      'content': content,
+      'time': time,
+      'icons': icons,
+      'images': images,
+      'width': width,
+      'height': height,
+    };
+  }
+
+  factory CategorytDTO.fromMap(Map<String, dynamic> map) {
+    return CategorytDTO(
+      title: map['title'] as String,
+      content: map['content'] as String,
+      time: map['time'] as String,
+      icons: map['icons'] as String,
+      images: map['images'] as String,
+      width: map['width'] as int,
+      height: map['height'] as int,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory CategorytDTO.fromJson(String source) =>
+      CategorytDTO.fromMap(json.decode(source) as Map<String, dynamic>);
 }

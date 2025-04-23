@@ -5,8 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/product_dto.dart';
 
 class RouteUtils {
-  static void navigateToCategory(
-      CategoreytDTO categorey, BuildContext context) {
+  static void navigateToCategory(CategorytDTO categorey, BuildContext context) {
     switch (categorey.images) {
       case "assets/images/view/sweetsuchi.svg":
         Navigator.pushNamed(context, RouteNames.suchi);

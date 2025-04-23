@@ -75,7 +75,7 @@ class CategoriesBodyView extends StatelessWidget {
                                 cubit.isPressedList[index] =
                                     !cubit.isPressedList[index];
 
-                                cubit.addFavorit(CategoreytDTO(
+                                cubit.addFavorit(CategorytDTO(
                                     title: title[index],
                                     content: content[index],
                                     time: time[index],

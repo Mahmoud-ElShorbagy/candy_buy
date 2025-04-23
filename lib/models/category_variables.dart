@@ -45,10 +45,10 @@ final List<String> icons = [
 final List<int> width = [83, 89, 74, 91, 67, 61, 91];
 final List<int> height = [105, 105, 116, 116, 112, 118, 120];
 
-final List<CategoreytDTO> category = [
+final List<CategorytDTO> category = [
   ...List.generate(
     images.length,
-    (index) => CategoreytDTO(
+    (index) => CategorytDTO(
         title: title[index],
         content: content[index],
         time: time[index],
