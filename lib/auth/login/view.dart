@@ -113,7 +113,7 @@ class LoginView extends StatelessWidget {
                         CustomTextRich(
                             onTap: () {
                               Navigator.pushNamed(
-                                  context, RouteNames.rigestername);
+                                  context, RouteNames.registerName);
                             },
                             text: "Don’t have an account? ",
                             textTap: "Sign Up"),

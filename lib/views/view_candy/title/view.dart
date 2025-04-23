@@ -1,6 +1,7 @@
-import 'package:candy_buy/auth/register/register_name/view.dart';
+import 'package:candy_buy/auth/register/register_page/cubit.dart';
 import 'package:candy_buy/core/helpers/app_colors.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../widgets/app_text.dart';
 
@@ -15,14 +16,20 @@ class TitleView extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.only(right: 35),
-          child: CustomText(
-            fontSize: 24,
-            text: enterName.isEmpty
-                ? "Hello, Mahmoud Elshorbagy"
-                : 'Hello $enterName,',
-            color: AppColors.textBoldColor,
-            fontWeight: FontWeight.w600,
-            fontFamily: "Fredoka",
+          child: BlocProvider(
+            create: (context) => RegisterCubit(),
+            child: BlocBuilder<RegisterCubit, RegisterState>(
+              builder: (context, state) {
+                final cubit = RegisterCubit.get(context);
+                return CustomText(
+                  fontSize: 24,
+                  text: 'Hello ${cubit.name},',
+                  color: AppColors.textBoldColor,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "Fredoka",
+                );
+              },
+            ),
           ),
         ),
         SizedBox(

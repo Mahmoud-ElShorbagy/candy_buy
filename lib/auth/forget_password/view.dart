@@ -115,7 +115,7 @@ class ForgetPasswordView extends StatelessWidget {
                               onTap: () {
                                 Navigator.pushNamed(
                                   context,
-                                  RouteNames.rigestername,
+                                  RouteNames.registerName,
                                 );
                               },
                               text: "Don’t have an account? ",

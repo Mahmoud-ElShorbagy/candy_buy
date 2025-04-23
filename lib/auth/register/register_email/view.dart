@@ -91,7 +91,7 @@ class RegisterEmailView extends StatelessWidget {
         Center(
           child: CustomTextRich(
             onTap: () {
-              Navigator.pushNamed(context, RouteNames.rigestername);
+              Navigator.pushNamed(context, RouteNames.registerName);
             },
             text: "Go back",
           ),

@@ -26,7 +26,7 @@ class RouteGenerator {
     switch (settings.name) {
       case RouteNames.onboardingview:
         return MaterialPageRoute(builder: (context) => const WalkthroughView());
-      case RouteNames.rigestername:
+      case RouteNames.registerName:
         return MaterialPageRoute(
             builder: (context) => const RegisterNameView());
       case RouteNames.login:

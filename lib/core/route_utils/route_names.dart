@@ -1,6 +1,6 @@
 class RouteNames {
   static const String onboardingview = '/';
-  static const String rigestername = '/rigestername';
+  static const String registerName = '/registerName';
   static const String login = '/login';
   static const String forgetpassword = '/forgetpassword';
   static const String emailsent = '/emailsent';

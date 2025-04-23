@@ -63,7 +63,7 @@ class _WalkthroughViewState extends State<WalkthroughView> {
                               text: "Get Started",
                               onPressed: () {
                                 Navigator.pushNamed(
-                                    context, RouteNames.rigestername);
+                                    context, RouteNames.registerName);
                               }),
                         ),
                         const SizedBox(height: 16),

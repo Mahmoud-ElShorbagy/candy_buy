@@ -23,7 +23,7 @@ import '../../views/view_candy/ice_cream_category/view.dart';
 class AppRoutes {
   static Map<String, WidgetBuilder> appRoutes = {
     RouteNames.onboardingview: (context) => const WalkthroughView(),
-    RouteNames.rigestername: (context) => const RegisterNameView(),
+    RouteNames.registerName: (context) => const RegisterNameView(),
     RouteNames.login: (context) => const LoginView(),
     RouteNames.forgetpassword: (context) => const ForgetPasswordView(),
     RouteNames.emailsent: (context) => const EmailSentView(),
