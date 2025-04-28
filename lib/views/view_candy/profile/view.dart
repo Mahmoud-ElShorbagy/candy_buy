@@ -95,7 +95,9 @@ class ProfileView extends StatelessWidget {
                     height: 34,
                   ),
                   buildRowSetting(
-                      "Edit Profile", "assets/images/view/profile.svg"),
+                      onTap: () {},
+                      "Edit Profile",
+                      "assets/images/view/profile.svg"),
                   const Divider(
                     thickness: 0.7,
                   ),
