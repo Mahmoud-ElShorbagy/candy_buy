@@ -23,7 +23,7 @@ class TitleView extends StatelessWidget {
                 final cubit = RegisterCubit.get(context);
                 return CustomText(
                   fontSize: 24,
-                  text: 'Hello ${cubit.name},',
+                  text: 'Hello ${cubit.nameController.text},',
                   color: AppColors.textBoldColor,
                   fontWeight: FontWeight.w600,
                   fontFamily: "Fredoka",

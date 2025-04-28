@@ -5,25 +5,42 @@ import 'package:candy_buy/utilities/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   final Database database = FireStoreDatabase(uid: "123");
-  String name = "";
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  String? name;
   final formKey = GlobalKey<FormState>();
   final formKey2 = GlobalKey<FormState>();
   final AuthBase authBase = Auth();
   PageController? pageController;
   RegisterCubit() : super(PasswordHidden()) {
-    loadName();
+    loadSavedName();
   }
+
+  final nameController = TextEditingController();
   final FirebaseAuth auth = FirebaseAuth.instance;
   static RegisterCubit get(BuildContext context) {
     return BlocProvider.of(context);
+  }
+
+  Future<void> loadSavedName() async {
+    final prefs = await SharedPreferences.getInstance();
+    final name = prefs.getString('user_name');
+    if (name != null) {
+      nameController.text = name;
+    }
+    emit(StateUpdate());
+  }
+
+  Future<void> saveName() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('user_name', nameController.text);
   }
 
   void togglePasswordVisibility() {
@@ -32,19 +49,6 @@ class RegisterCubit extends Cubit<RegisterState> {
     } else {
       emit(PasswordHidden());
     }
-  }
-
-  Future<void> saveName() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString("saved_name", name);
-    emit(StateUpdate());
-  }
-
-  Future<void> loadName() async {
-    final prefs = await SharedPreferences.getInstance();
-    final savedName = prefs.getString("saved_name") ?? "";
-    name = savedName;
-    emit(StateUpdate());
   }
 
   Future<void> register() async {
@@ -59,7 +63,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         await database.setUserData(UserData(
             uid: documnentIdFromLocalData(), email: emailController.text));
         await FirebaseAuth.instance.currentUser!.sendEmailVerification();
-        await saveName();
+
         emit(RegisterSuccess());
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {

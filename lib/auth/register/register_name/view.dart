@@ -44,7 +44,7 @@ class _RegisterNameViewState extends State<RegisterNameView> {
                         height: 174),
                   ),
                   AppText(
-                      textBold: cubit.name,
+                      textBold: "Welcome to Doki Doki.",
                       text:
                           "Let’s start with the basic details. First things first, what sould we call you"),
                   const SizedBox(height: 50),
@@ -54,8 +54,9 @@ class _RegisterNameViewState extends State<RegisterNameView> {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 32),
                       child: CustomTextField(
+                        controller: cubit.nameController,
                         onChanged: (v) {
-                          cubit.name = v;
+                          cubit.nameController.text = v;
                         },
                         validator: (v) {
                           return Validators.name(v);
@@ -72,8 +73,9 @@ class _RegisterNameViewState extends State<RegisterNameView> {
                       text: "Next",
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
+                          await cubit.saveName();
                           Navigator.pushNamed(context, RouteNames.register,
-                              arguments: cubit.name);
+                              arguments: cubit.nameController.text);
                         }
                       }),
                   const SizedBox(

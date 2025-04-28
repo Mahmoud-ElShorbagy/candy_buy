@@ -40,7 +40,7 @@ class ProfileView extends StatelessWidget {
                       final cubit = RegisterCubit.get(context);
                       return CustomText(
                           fontFamily: "Fredoka",
-                          text: cubit.name,
+                          text: cubit.nameController.text,
                           fontWeight: FontWeight.w600,
                           color: AppColors.textBoldColor,
                           fontSize: 24);
